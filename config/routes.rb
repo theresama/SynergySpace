@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'signup'  => 'users#new'
 
+  resources :users
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
