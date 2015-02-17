@@ -1,60 +1,80 @@
+ <div class="splash-page">
+   <div class="site-wrapper">
+     <div class="site-wrapper-inner">
+       <div class="cover-container">
+         <div class="masthead clearfix">
+           <div class="inner">
+             <h3 class="masthead-brand cover-heading">SynergySpace</h3>
+             <nav>
+               <ul class="nav masthead-nav">
+                 <li class="active"><a href="/">Home</a></li>
+                 <li><a href="/signup">Login</a></li>
+               </ul>
+             </nav>
+           </div>
+         </div>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:700italic' rel='stylesheet' type='text/css'>
+         <div class="inner cover">
+           <h1 class="cover-heading">SynergySpace</h1>
+           <p class="lead">Sugar, space, and everything nice: coworking space rental and teaming to succeed service. Sign up to lease or rent the perfect office space with office mates that match your energy.</p>
+           <p class="lead">
+             <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-default", style:"color: darkblue" %>
+           </p>
+         </div>
 
-    <title>Synergy Space</title>
+         <div class="mastfoot">
+           <div class="inner">
+             <p>by Blue Screen (Alexei Darmin, Ben Fridman, Mark Kazakevich, Theresa Ma)</p>
+           </div>
+         </div>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+       </div>
 
-  <body>
+     </div>
 
-    <div class="site-wrapper">
+   </div>
+ </div>
 
-      <div class="site-wrapper-inner">
+ <div class="search-wrapper">
+  <div class="search-panel">
+    <div class="btn-group">
+      <div class="dropdown dropdown-btn" style="display: inline">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            City <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Toronto</a></li>
+            <li><a href="#">New York</a></li>
+            <li><a href="#">San Francisco</a></li>
+          </ul>
+      </div>
+      
 
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand cover-heading">SynergySpace</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="/">Home</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">SynergySpace</h1>
-            <p class="lead">Sugar, space, and everything nice: coworking space rental and teaming to succeed service. Sign up to lease or rent the perfect office space with office mates that match your energy.</p>
-            <p class="lead">
-              <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-default" %>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>by Blue Screen (Alexei Darmin, Ben Fridman, Mark Kazakevich, Theresa Ma)</p>
-            </div>
-          </div>
-
-        </div>
-
+      <div class="dropdown dropdown-btn" style="display: inline">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            From <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">somehow going to be a calendar</a></li>
+          </ul>
       </div>
 
-    </div>
-  </body>
-</html>
+      <div class="dropdown dropdown-btn" style="display: inline">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            To<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">somehow going to be a calendar</a></li>
+          </ul>
+      </div>
+
+      
+
+      
+      
+    <div>
+
+  </div>
+ </div>
+
+
