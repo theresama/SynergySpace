@@ -33,13 +33,8 @@
   a:hover {
     color: #fff;
   }
-
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
   background: image-url('office.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover; 
 
   /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -191,9 +186,15 @@
   width: 100%;
   height: 125px;
   background-color: rgba(51, 51, 51, 0.85);
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 
   
   padding-top: 15px;
@@ -231,3 +232,49 @@
   }
 
 }
+
+.hide{
+  display: none;
+}
+
+.popup-cover{
+  position: fixed;
+  top:0px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(51, 51, 51, 0.8);
+  width: 100%;
+  height: 100%;
+  
+  .popup-wrapper{
+    width: 25%;
+    margin: auto;
+    background: #fafafa;
+    padding: 30px;
+  }
+}
+
+.spaces-display-wrapper{
+  width: 85%;
+  margin: auto;
+}
+
+.space-result{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

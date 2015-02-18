@@ -28,6 +28,12 @@
 	<% if not current_page?(root_path) %>
 		<%= render 'layouts/header' %>
 		<main class="page-container">
+			<% if notice %>
+			  <p class="alert alert-success"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+			  <p class="alert alert-danger"><%= alert %></p>
+			<% end %>
 			<%= yield %>
 		</main>
 	<% else %>

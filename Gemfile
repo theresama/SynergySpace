@@ -46,6 +46,9 @@ gem 'rails_12factor'
 
 gem "font-awesome-rails"
 
+gem 'devise'
+
+
 group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3'
 end
