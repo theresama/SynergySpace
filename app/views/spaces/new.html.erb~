@@ -7,6 +7,14 @@
 		<%= render 'form' %>
 
 
+		<div class="col-md-7">
+			<div class="col-md-7">
+				<a href="#" class="thumbnail">
+					<img src="<%= asset_path('uploadimage.png') %>" alt="...">
+				</a>
+			</div>	
+		</div>
+
 
 		<%= link_to 'Back', spaces_path %>
 
