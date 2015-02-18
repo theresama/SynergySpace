@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'welcome' => 'pages#welcome'
   get 'dashboard' => 'admin#dashboard'
+  get 'dashboard/users' => 'admin#indexUsers'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

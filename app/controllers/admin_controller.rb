@@ -7,5 +7,9 @@ class AdminController < ApplicationController
 		end
 	end
 
+	def indexUsers
+
+	end
+
 
 end
