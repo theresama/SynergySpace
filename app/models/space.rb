@@ -1,4 +1,5 @@
 class Space < ActiveRecord::Base
+	belongs_to :user
   	validates :name, presence: true, length: { maximum: 100 }
   	validates :type, presence: true
   	validates :streetnum, presence: true
