@@ -259,13 +259,31 @@
   margin-bottom: 30px;
 }
 
-.virtual-iframe{
+/*.iframe-popup{
   width: 90%;
   min-width:225px;
   max-width:325px;
   margin: auto;
   background: #fafafa;
   padding: 15px 30px 15px 30px;
+  overflow:auto;
+  border:none; */
+
+.popup{
+  display:block;
+  width:95%;
+  min-width:225px;
+  max-width:325px;
+  margin:auto;
+  border:none;
+}
+
+.iframe-popup{
+  width:90%;
+  height:auto;
+  min-width:200px;
+  max-width:325px;
+  margin:auto;
 
   h1{
     font: 3em 'Droid Serif', sans-serif;
