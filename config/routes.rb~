@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   get 'welcome' => 'pages#welcome'
 
-  get 'submission' => 'pages#submission'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
