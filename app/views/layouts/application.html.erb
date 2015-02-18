@@ -23,7 +23,7 @@
 </head>
 <body>
 
-	<% if not current_page?(root_path) %>
+	<% if not current_page?(root_path) and not current_user.admin? %>
 		<%= render 'layouts/header' %>
 		<main class="page-container">
 			<% if notice %>
