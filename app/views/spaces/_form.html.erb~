@@ -1,0 +1,99 @@
+<%= form_for(@space) do |f| %>
+	<div class="col-md-5">
+		<% if @space.errors.any? %>
+		  <div id="error_explanation">
+		    <h2><%= pluralize(@space.errors.count, "error") %> prohibited this space from being saved:</h2>
+
+		    <ul>
+		    <% @space.errors.full_messages.each do |message| %>
+		      <li><%= message %></li>
+		    <% end %>
+		    </ul>
+		  </div>
+		<% end %>
+
+		<div class="input-section">
+			<div class="title">
+				<h3>Title:</h3>				
+			</div>
+			<div class="input-group long">
+		  	<%= f.text_field :name %>
+			</div>
+		</div>
+
+		
+		<div class="input-section">
+			<div class="title">
+				<h3>Type:</h3>				
+			</div>
+			<div class="input-group long">
+		  	<%= f.text_field :type %>
+			</div>
+		</div>
+
+		
+		<div class="input-section">
+			<div class="title">
+				<h3>Street Number:</h3>				
+			</div>
+			<div class="input-group long">
+		  	<%= f.text_field :streetnum %>
+			</div>
+		</div>
+
+
+		
+		<div class="input-section">
+			<div class="title">
+				<h3>Street:</h3>				
+			</div>
+			<div class="input-group long">
+		  	<%= f.text_field :street %>
+			</div>
+		</div>
+
+		
+		<div class="input-section">
+			<div class="title">
+				<h3>City:</h3>				
+			</div>
+			<div class="input-group long">
+		  	<%= f.text_field :city %>
+			</div>
+		</div>
+
+		
+		<div class="input-section">
+			<div class="title">
+				<h3>State/Province:</h3>				
+			</div>
+			<div class="input-group long">
+		  	<%= f.text_field :state %>
+			</div>
+		</div>
+
+
+		
+		<div class="input-section">
+			<div class="title">
+				<h3>Areacode:</h3>				
+			</div>
+			<div class="input-group long">
+		  	<%= f.text_field :areacode %>
+			</div>
+		</div>
+
+		<div class="actions input-section	">
+		  <%= f.submit %>
+		</div>
+	</div>
+
+
+	<div class="col-md-7">
+		<div class="col-md-7">
+			<a href="#" class="thumbnail">
+				<img src="<%= asset_path('uploadimage.png') %>" alt="...">
+			</a>
+		</div>	
+	</div>
+<% end %>
