@@ -1,4 +1,36 @@
-<% @users = User.all %>
-<% @users.each do |user| %>
-  <%= user.email %><br/>
-<% end %>
+<main class="dashboard">
+	<%= render "admin/header" %>
+
+    <div class="container-fluid">
+      <div class="row page-start">
+        <%= render 'admin/sidebar' %>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h2 class="sub-header">Users</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>User #</th>
+                  <th>Email</th>
+                  <th>Last used IP</th>
+                  <th>Admin?</th>
+                </tr>
+              </thead>
+              <tbody>
+              	<% @users = User.all %>
+              	<% @users.each do |user| %>
+              		<tr>
+              			<td><%= user.id %></td>
+              	  		<td><%= user.email %></td>
+              	  		<td><%= user.last_sign_in_ip %></td>
+              	  		<td><%= user.admin %></td>
+              	  	</tr>
+              	<% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+

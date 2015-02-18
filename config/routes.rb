@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'dashboard/users' => 'admin#indexUsers'
 
   get 'submission' => 'pages#submission'
+  get 'spaces/new' => 'spaces#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
