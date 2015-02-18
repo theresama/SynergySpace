@@ -12,7 +12,7 @@
                     </li>
                 <% else %>
                   <li>
-                      <a id="login" href="">Login</a>
+                      <a id="login" href=""><i class="fa fa-sign-in"></i> Login</a>
                   </li>
                 <% end %>
                </ul>
@@ -64,15 +64,12 @@
 
 
 <div class="popup-cover hide">
-  <div class="popup-wrapper">
     <div class="signup-wrapper hide pop-select">
-      <%= render "layouts/signup" %>
+      <iframe class="popup" scrolling='no' height='300px' src='/signup'></iframe>
     </div>
     <div class="login-wrapper hide pop-select">
       <%= render "layouts/login" %>
     </div>
-    
-  </div>
 </div>
 
 
