@@ -13,10 +13,7 @@ Rails.application.routes.draw do
   get 'dashboard' => 'admin#dashboard'
   get 'dashboard/users' => 'admin#indexUsers'
 
-<<<<<<< HEAD
-=======
   get 'submission' => 'pages#submission'
->>>>>>> b3d36526ed7d736d80f7b21dd35cc1ee2c8a98dd
   get 'spaces/new' => 'spaces#new'
 
   # Example of regular route:
