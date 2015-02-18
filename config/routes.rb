@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :spaces
+
   get 'users/new'
 
   get 'pages/home'
