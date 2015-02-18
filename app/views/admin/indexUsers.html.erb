@@ -11,7 +11,9 @@
               <thead>
                 <tr>
                   <th>User #</th>
+                  <th>Name</th>
                   <th>Email</th>
+                  <th>Occupation</th>
                   <th>Last used IP</th>
                   <th>Admin?</th>
                 </tr>
@@ -21,7 +23,9 @@
               	<% @users.each do |user| %>
               		<tr>
               			<td><%= user.id %></td>
+              			<td><%= user.name %></td>
               	  		<td><%= user.email %></td>
+              	  		<td><%= user.occupation %></td>
               	  		<td><%= user.last_sign_in_ip %></td>
               	  		<td><%= user.admin %></td>
               	  	</tr>
