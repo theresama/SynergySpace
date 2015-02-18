@@ -1,0 +1,90 @@
+ <div class="submit-page">
+	<div class="container col-md-offset-2 col-md-10">
+		<div class="page-header">
+			<h1>Submit <small>- add a new space for users to browse</small></h1>		
+		</div>
+
+		<div class="col-md-5">
+			
+			<div class="input-section">
+				<div class="title">
+					<h3>Title:</h3>				
+				</div>
+				<div class="input-group">
+					<input type="text" class="form-control long" placeholder="title" aria-describedby="basic-addon1">
+				</div>
+			</div>
+
+			<div class="input-section">
+				<div class="title">
+					<h3>Type:</h3>				
+				</div>
+				<div class="input-group">
+					<input type="text" class="form-control long" placeholder="type" aria-describedby="basic-addon1">
+				</div>
+			</div>
+
+			<div class="input-section">
+				<div class="title">
+					<h3>Price:</h3>				
+				</div>
+				<div class="input-group">
+					<input type="text" class="form-control long" placeholder="0" aria-describedby="basic-addon1">
+				</div>
+			</div>
+
+			<div class="input-section">
+				<div class="title">
+					<h3>City:</h3>				
+				</div>
+		    <select class="input-lg long">
+		        <option value="one">Toronto</option>
+		        <option value="two">New York</option>
+		        <option value="three">San Francisco</option>
+		    </select>
+			</div>
+
+			<div class="input-section">
+				<div class="title">
+					<h3>Address:</h3>				
+				</div>
+				<div class="input-group">
+					<input type="text" class="form-control long" placeholder="12345 abc Street" aria-describedby="basic-addon1">
+				</div>
+			</div>
+
+			<div class="input-section">
+  			<button type="button" id="submit" class="btn btn-primary btn-large">Submit</button>	
+			</div>
+
+		</div>
+
+		<div class="col-md-7">
+			<div class="col-md-7">
+				<a href="#" class="thumbnail">
+					<img src="../../assets/images/uploadimage.png" alt="...">
+				</a>
+			</div>	
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
