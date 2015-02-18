@@ -9,9 +9,10 @@
  }
 
  .cover-heading{
-   font-family: 'Droid Serif', sans-serif;
-   font-weight: 700;
-   font-style: italic;
+  font: 4em 'Droid Serif', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+   
  }
 
 
@@ -26,9 +27,6 @@
 }
 
 .splash-page{
-
-  height: 60%;
-
   /* Links */
   a,
   a:focus,
@@ -36,23 +34,28 @@
     color: #fff;
   }
 
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  background: image-url('office.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+
   /* Extra markup and styles for table-esque vertical and horizontal centering */
   .site-wrapper {
+
+    min-height: 500px;
+    
     color: #fff !important;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
     
     display: table;
     width: 100%;
-    height: 100%; /* For at least Firefox */
-    min-height: 100%;
-    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-            box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-    background: image-url('office.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; 
+    //height: 100%; /* For at least Firefox */
+    //min-height: 100%;
+    
   }
   .site-wrapper-inner {
     display: table-cell;
@@ -72,6 +75,11 @@
   /*
    * Header
    */
+
+  .masthead{
+    position: fixed;
+  }
+
   .masthead-brand {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -121,10 +129,16 @@
 
   .cover {
     padding: 0 20px;
+    
+    .lead{
+      margin-top: 20px;
+    }
   }
   .cover .btn-lg {
     padding: 10px 20px;
     font-weight: bold;
+    background: rgba(255, 255, 255, 0.7 );
+    color: #333;
   }
 
   /*
@@ -144,11 +158,11 @@
   @media (min-width: 768px) {
     /* Pull out the header and footer */
     .masthead {
-      position: fixed;
+      //position: fixed;
       top: 0;
     }
     .mastfoot {
-      position: fixed;
+      //position: fixed;
       bottom: 0;
     }
     /* Start the vertical centering */
@@ -173,9 +187,48 @@
 }
 
 .search-wrapper{
+
+  width: 100%;
+  height: 125px;
+  background-color: rgba(51, 51, 51, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+
+
   .search-panel{
-    width: 50%;
     margin: auto;
+    
+    .formfield{
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      margin-right: -5px;
+    }
+        
+    .search-form:first-child{
+      .formfield{
+        //border-top-left-radius: 4px;
+        //border-bottom-left-radius: 4px;
+        margin-right: -5px;
+      }
+      
+    }
+
+    .search-form:last-child{
+      .formfield{
+        //border-bottom-right-radius: 4px;
+        //border-top-right-radius: 4px;
+      }
+      
+    }
   }
+
 }
 

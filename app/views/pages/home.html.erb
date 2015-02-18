@@ -4,10 +4,8 @@
        <div class="cover-container">
          <div class="masthead clearfix">
            <div class="inner">
-             <h3 class="masthead-brand cover-heading">SynergySpace</h3>
              <nav>
                <ul class="nav masthead-nav">
-                 <li class="active"><a href="/">Home</a></li>
                  <li><a href="/signup">Login</a></li>
                </ul>
              </nav>
@@ -16,16 +14,10 @@
 
          <div class="inner cover">
            <h1 class="cover-heading">SynergySpace</h1>
-           <p class="lead">Sugar, space, and everything nice: coworking space rental and teaming to succeed service. Sign up to lease or rent the perfect office space with office mates that match your energy.</p>
+           <p class="lead">Lease or rent the perfect office space with office mates that match your energy.</p>
            <p class="lead">
-             <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-default", style:"color: darkblue" %>
+             <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-default" %>
            </p>
-         </div>
-
-         <div class="mastfoot">
-           <div class="inner">
-             <p>by Blue Screen (Alexei Darmin, Ben Fridman, Mark Kazakevich, Theresa Ma)</p>
-           </div>
          </div>
 
        </div>
@@ -33,48 +25,35 @@
      </div>
 
    </div>
+
+
+    <div class="search-wrapper">
+
+      <div class="search-panel">
+
+        <form class="form-inline search-form">
+          <select class="form-control formfield" style="display:inline">
+              <option value="one">Toronto</option>
+              <option value="two">New York</option>
+              <option value="three">San Francisco</option>
+          </select>
+          <select class="form-control formfield" style="display:inline">
+              <option value="one">$0 - 500</option>
+              <option value="two">$501 - 1000</option>
+              <option value="three">$1001 - 1500</option>
+              <option value="four">$1501 - 2000</option>
+              <option value="five">$2001 - 2500</option>
+              <option value="six">$2501 - 3000</option>
+              <option value="seven">$3001+</option>
+          </select>
+          <button type="submit" class="btn btn-default formfield" style="background: #E5E3E3"><i class="fa fa-search"></i></button>
+        </form>
+
+      </div>
+    </div>
+
  </div>
 
- <div class="search-wrapper">
-  <div class="search-panel">
-    <div class="btn-group">
-      <div class="dropdown dropdown-btn" style="display: inline">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            City <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Toronto</a></li>
-            <li><a href="#">New York</a></li>
-            <li><a href="#">San Francisco</a></li>
-          </ul>
-      </div>
-      
 
-      <div class="dropdown dropdown-btn" style="display: inline">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            From <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">somehow going to be a calendar</a></li>
-          </ul>
-      </div>
-
-      <div class="dropdown dropdown-btn" style="display: inline">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            To<span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">somehow going to be a calendar</a></li>
-          </ul>
-      </div>
-
-      
-
-      
-      
-    <div>
-
-  </div>
- </div>
 
 
