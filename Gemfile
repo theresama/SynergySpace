@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
-
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 #Use Bootstrap
 gem 'bootstrap-sass', '~> 3.3.3'
@@ -33,6 +31,9 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -42,7 +43,20 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails_12factor'
+
 gem "font-awesome-rails"
+
+gem 'devise'
+
+
+group :development, :test do # <<<< :development, not devlopment
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg',             '0.17.1'
+end
 
 
 
