@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'}
 
+  get 'welcome' => 'pages#welcome'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

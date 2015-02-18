@@ -12,9 +12,7 @@
                     </li>
                 <% else %>
                   <li>
-                    <li>
-                      <%= link_to('Login', new_user_session_path)  %>  
-                      </li>
+                      <a id="login" href="">Login</a>
                   </li>
                 <% end %>
                </ul>
@@ -67,19 +65,36 @@
 
 <div class="popup-cover hide">
   <div class="popup-wrapper">
-    <%= render "layouts/signup" %>
+    <div class="signup-wrapper hide pop-select">
+      <%= render "layouts/signup" %>
+    </div>
+    <div class="login-wrapper hide pop-select">
+      <%= render "layouts/login" %>
+    </div>
+    
   </div>
 </div>
 
 <script>
   $(function(){
-    $("#signup").on('click', function(){
+    $("#signup").on('click', function(e){
+      e.preventDefault();
       $(".popup-cover").toggleClass("hide");
+      $(".signup-wrapper").toggleClass("hide");
     });
+
+    $("#login").on('click', function(e){
+      e.preventDefault();
+      $(".popup-cover").toggleClass("hide");
+      $(".login-wrapper").toggleClass("hide");
+    });
+
+
 
     $('.popup-cover').on('click', function(e) { 
        if( e.target !== this ) 
            return;
+        $(".pop-select").addClass("hide");
         $(".popup-cover").toggleClass("hide");
     });
 
