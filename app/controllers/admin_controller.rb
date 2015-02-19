@@ -11,5 +11,11 @@ class AdminController < ApplicationController
 
 	end
 
+	def makeAdmin
+		user.update_attribute :admin, true
+
+		render :json =>  { :status => :ok }
+	end
+
 
 end

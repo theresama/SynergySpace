@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218202454) do
+ActiveRecord::Schema.define(version: 20150219001150) do
 
   create_table "spaces", force: true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "spacetype"
     t.integer  "streetnum"
     t.string   "street"
     t.string   "city"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150218202454) do
     t.string   "areacode"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
@@ -37,6 +38,8 @@ ActiveRecord::Schema.define(version: 20150218202454) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin",                  default: false
+    t.string   "name"
+    t.string   "occupation"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
