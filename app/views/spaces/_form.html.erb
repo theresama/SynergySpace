@@ -18,7 +18,7 @@
 					<h3>Title:</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :name %>
+					<%= f.text_field :name, :class => "form-control" %>
 				</div>
 			</div>
 
@@ -28,7 +28,7 @@
 					<h3>Type:</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :spacetype %>
+					<%= f.select :spacetype, options_for_select(["Open Concept", "Cubicles", "Team", "Combination"]), :class => 'form-control' %>
 				</div>
 			</div>
 
@@ -38,7 +38,7 @@
 					<h3>Street Number:</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :streetnum %>
+					<%= f.text_field :streetnum, :class => "form-control" %>
 				</div>
 			</div>
 
@@ -49,7 +49,7 @@
 					<h3>Street:</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :street %>
+					<%= f.text_field :street, :class => "form-control" %>
 				</div>
 			</div>
 
@@ -59,7 +59,9 @@
 					<h3>City:</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :city %>
+
+					<%= f.select :city, options_for_select(["Toronto", "New York", "San Francisco"]), :class => 'form-control' %>
+
 				</div>
 			</div>
 
@@ -69,7 +71,7 @@
 					<h3>State/Province:</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :state %>
+					<%= f.select :state, options_for_select(["Ontario", "New York", "California"]), :class => 'form-control' %>
 				</div>
 			</div>
 
@@ -80,7 +82,7 @@
 					<h3>Areacode:</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :areacode %>
+					<%= f.text_field :areacode, :class => "form-control" %>
 				</div>
 			</div>
 
@@ -89,7 +91,7 @@
 					<h3>Vacancies:</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :vacancies %>
+					<%= f.text_field :vacancies, :class => "form-control" %>
 				</div>
 			</div>
 
@@ -97,22 +99,25 @@
 				<div class="title">
 					<h3>Price:</h3>				
 				</div>
-				<div class="input-group long">
-					<%= f.text_field :price %>
+				<div class="input-group">
+				    <div class="input-group-addon">$</div>
+				    <%= f.text_field :price, :class => "form-control" %>
 				</div>
 			</div>
+
+			
 
 			<div class="input-section">
 				<div class="title">
 					<h3>Description</h3>				
 				</div>
 				<div class="input-group long">
-					<%= f.text_field :description %>
+					<%= f.text_area :description , :rows => "10", :class => "form-control" %>
 				</div>
 			</div>
 
-			<div class="actions input-section	">
-				<%= f.submit %>
+			<div class="actions input-section">
+				<%= f.submit :submit , :class => "form-control" %>
 			</div>
 		</div>
 
