@@ -1,0 +1,44 @@
+<main class="dashboard">
+	<%= render "admin/header" %>
+
+    <div class="container-fluid">
+      <div class="row page-start">
+        <%= render 'admin/sidebar' %>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h2 class="sub-header">Spaces</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Space ID</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Price</th>
+                  <th>Vacancies</th>
+                  <th>Owner</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+              	<% @spaces = Space.all %>
+              	<% @spaces.each do |space| %>
+              		<tr>
+              			<td><%= space.id %></td>
+              			<td><%= space.name %></td>
+            	  		<td><%= space.streetnum %> 
+                      <%= space.street %>, <%= space.city %>, <%= space.state %>
+                    </td>
+            	  		<td><%= space.price %></td>
+            	  		<td><%= space.vacancies %></td>
+            	  		<td></td>
+                    <td><%= space.spacetype %></td>
+            	  	</tr>
+              	<% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+

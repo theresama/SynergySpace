@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
+
 	before_filter :authenticate_user!
-	before_filter :check_user_type
+
+	def show
+	  @user = User.find(params[:id])
+	end
 
 	def index
-	  @users = @User.all
+	  @users = User.all
 	end
 
 	def user_params

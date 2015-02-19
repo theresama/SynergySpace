@@ -1,3 +1,25 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.profile-wrapper{
+	width: 80%;
+	margin: auto;
+	
+	.person{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	
+	.username{
+		font: 2em 'Droid Serif', sans-serif;
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	.info{
+		font-weight: bold;
+		font: 1.5em serif;
+	}
+}

@@ -11,13 +11,20 @@ Rails.application.routes.draw do
   :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'}, 
   :controllers => { registrations: 'registrations' }
 
+  resources :users
+
+  
+
 
   get 'welcome' => 'pages#welcome'
   get 'dashboard' => 'admin#dashboard'
   get 'dashboard/users' => 'admin#indexUsers'
+  get 'dashboard/spaces' => 'admin#indexSpaces'
 
   get 'submission' => 'pages#submission'
   get 'spaces/new' => 'spaces#new'
+
+  get 'users/:id' => 'users#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

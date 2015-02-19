@@ -16,18 +16,21 @@
                   <th>Occupation</th>
                   <th>Last used IP</th>
                   <th>Admin?</th>
+                  <th>Profile</th>
                 </tr>
               </thead>
               <tbody>
               	<% @users = User.all %>
               	<% @users.each do |user| %>
+                
               		<tr>
-              			<td><%= user.id %></td>
+              			<td><%= user.id %></a></td>
               			<td><%= user.name %></td>
-              	  		<td><%= user.email %></td>
-              	  		<td><%= user.occupation %></td>
-              	  		<td><%= user.last_sign_in_ip %></td>
-              	  		<td><%= user.admin %></td>
+            	  		<td><%= user.email %></td>
+            	  		<td><%= user.occupation %></td>
+            	  		<td><%= user.last_sign_in_ip %></td>
+            	  		<td><%= user.admin %></td>
+                    <td><a href="/users/<%= user.id %>">View</a></td>
               	  	</tr>
               	<% end %>
               </tbody>
@@ -36,5 +39,7 @@
         </div>
       </div>
     </div>
+
+    
 </main>
 

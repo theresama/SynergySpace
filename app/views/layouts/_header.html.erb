@@ -18,7 +18,10 @@
             </li>
             <% if user_signed_in? %>
               <li><a href="/spaces/new">List Your Space</a></li>
-              <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+              <li>
+                <a href="/users/<%= current_user.id %>">Profile</a>
+              </li>
+              <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
               <li>
                 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
               </li>

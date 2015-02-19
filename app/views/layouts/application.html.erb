@@ -25,8 +25,12 @@
 </head>
 <body>
 
-	<% if user_signed_in? and not current_user.admin? %>
-		<%= render 'layouts/header' %>
+	<% if user_signed_in? %>
+		<% if current_user.admin? %> 
+			<%= render 'admin/header' %>
+		<% else %>
+			<%= render 'layouts/header' %>
+		<% end %>
 		<main class="page-container">
 			<% if notice %>
 			  <p class="alert alert-success"><%= notice %></p>

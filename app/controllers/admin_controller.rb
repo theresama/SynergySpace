@@ -11,6 +11,10 @@ class AdminController < ApplicationController
 
 	end
 
+	def indexSpaces
+
+	end
+
 	def makeAdmin
 		user.update_attribute :admin, true
 
