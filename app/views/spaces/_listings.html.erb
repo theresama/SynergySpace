@@ -1,0 +1,28 @@
+<h1 class="cover-heading text-center heading-spacer">Space Listings</h1>
+<hr></hr>
+<div class="space-wrapper">
+
+  <% @spaces.each do |space| %>
+
+  <div class="space">
+    <div class="Media">
+      <img class="Media-figure" src="holder.js/400x275/industrial" alt="">
+      <div class="Media-body">
+        <h4 class="spacename"><%= link_to space.name, space %></h4>
+        <p class="address"><%= space.streetnum %> <%= space.street %>, <%= space.city %>, <%= space.state %></p>
+        <p><span class="info">Type:</span><%= space.spacetype %></p>
+        <p><span class="info">Price:</span><%= space.price %></p>
+        <p><span class="info">Vacancies:</span><%= space.vacancies %></p>
+        <p class="description"><%= space.description %></p>
+
+        <%= link_to 'Show', space %>
+        <%= link_to 'Edit', edit_space_path(space) %>
+        <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+  
+</div>

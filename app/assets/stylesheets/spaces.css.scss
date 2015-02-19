@@ -1,3 +1,50 @@
 // Place all the styles related to the Spaces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.heading-spacer{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.space-wrapper{
+	width: 80%;
+	margin: auto;
+	
+	.space{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	
+	.spacename{
+		font: 2em 'Droid Serif', sans-serif;
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	.address{
+		font: 1.5em sans-serif;
+		font-weight: bold;
+	}
+
+	.info{
+		font-weight: bold;
+		font: 1.5em serif;
+	}
+	
+}
+
+
+.Media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Media-figure {
+  margin-right: 1em;
+}
+
+.Media-body {
+  flex: 1;
+}
+

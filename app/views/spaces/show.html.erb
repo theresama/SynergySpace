@@ -35,5 +35,20 @@
   <%= @space.areacode %>
 </p>
 
+<p>
+  <strong>Price:</strong>
+  <%= @space.price %>
+</p>
+
+<p>
+  <strong>Vacancies:</strong>
+  <%= @space.vacancies %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @space.description %>
+</p>
+
 <%= link_to 'Edit', edit_space_path(@space) %> |
 <%= link_to 'Back', spaces_path %>

@@ -6,5 +6,7 @@ class Space < ActiveRecord::Base
   	validates :street, presence: true
   	validates :city, presence: true
   	validates :state, presence: true
+  	validates :price, presence: true
+  	validates :vacancies, presence: true
   	validates :areacode, presence: true
 end
