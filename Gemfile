@@ -53,6 +53,9 @@ gem 'devise'
 #for reputation system
 gem 'ratyrate', :github => 'wazery/ratyrate'
 
+#webserver
+gem 'puma'
+
 
 group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3'
