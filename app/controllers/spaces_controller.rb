@@ -1,4 +1,5 @@
 class SpacesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   # GET /spaces
@@ -10,6 +11,7 @@ class SpacesController < ApplicationController
   # GET /spaces/1
   # GET /spaces/1.json
   def show
+    
   end
 
   # GET /spaces/new
@@ -24,7 +26,7 @@ class SpacesController < ApplicationController
   # POST /spaces
   # POST /spaces.json
   def create
-    @space = Space.new(space_params)
+    @space = current_user.spaces.build(space_params)
 
     respond_to do |format|
       if @space.save

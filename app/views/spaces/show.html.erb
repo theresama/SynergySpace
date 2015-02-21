@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Owner:</strong>
+  <%= @space.user.name %>
+</p>
+
+<p>
   <strong>Type:</strong>
   <%= @space.spacetype %>
 </p>
@@ -55,5 +60,8 @@
   <%= rating_for @space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
 </p>
 
-<%= link_to 'Edit', edit_space_path(@space) %> |
+<% if current_user == @space.user %>
+  <%= link_to 'Edit', edit_space_path(@space) %> |
+  <%= link_to 'Destroy', @space, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+<% end%>
 <%= link_to 'Back', spaces_path %>

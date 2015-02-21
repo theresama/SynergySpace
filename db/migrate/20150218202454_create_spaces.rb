@@ -10,6 +10,12 @@ class CreateSpaces < ActiveRecord::Migration
       t.string :areacode
 
       t.timestamps
+
+      t.references :user, index: true
+
     end
+
+    add_foreign_key :spaces, :users
+    add_index :spaces, [:user_id, :created_at]
   end
 end

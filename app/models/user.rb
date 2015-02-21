@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :spaces
+	has_many :spaces, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
