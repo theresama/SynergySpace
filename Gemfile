@@ -44,9 +44,14 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 gem 'rails_12factor'
 
+#import icons
 gem "font-awesome-rails"
 
+#for user authentication
 gem 'devise'
+
+#for reputation system
+gem 'ratyrate', :github => 'wazery/ratyrate'
 
 
 group :development, :test do # <<<< :development, not devlopment

@@ -50,5 +50,10 @@
   <%= @space.description %>
 </p>
 
+<p>
+  <strong>Avg Rating:</strong>
+  <%= rating_for @space, "reputation", :disable_after_rate => true, :cancel => false %>
+</p>
+
 <%= link_to 'Edit', edit_space_path(@space) %> |
 <%= link_to 'Back', spaces_path %>

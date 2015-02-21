@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   resources :spaces
 
   # The priority is based upon order of creation: first created -> highest priority.
