@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
+    ratyrate_rateable "reputation"
     ratyrate_rater
 
          
