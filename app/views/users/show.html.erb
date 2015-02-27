@@ -2,7 +2,14 @@
 <div class="profile-wrapper">
 	<div class="person">
 	  <div class="Media">
-	    <img class="Media-figure" src="holder.js/300x300/social" alt="">
+	    <div class="Media-figure" >
+	    	<img src="holder.js/300x300/social" alt="">
+
+	    	<!-- <input name="tags" id="tags" value="foo,bar,baz" /> -->
+
+
+
+	    </div>
 	    <div class="Media-body">
 	      <h4 class="username"><%= @user.name %></h4>
 	      <p>
@@ -14,3 +21,9 @@
 	  </div>
 	</div>
 </div>
+
+<script>
+	$(function(){
+		$('#tags').tagsInput();
+	})
+</script>

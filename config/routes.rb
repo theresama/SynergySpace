@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'pages#home'
   
-  devise_for :users, :path => '', 
-  :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'}, 
-  :controllers => { registrations: 'registrations' }
+  devise_for :users,
+  :controllers => { registrations: 'registrations'}
 
   resources :users
   resources :spaces

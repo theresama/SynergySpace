@@ -31,7 +31,16 @@
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
           <%= f.password_field :current_password, autocomplete: "off", :class=>'form-control' %></div>
 
-        <%= f.submit class: 'btn btn-default' %>
+        <div class="field">
+          <%= f.label :tag_list, "Your tags (separated by commas)" %><br/>
+          <%= f.text_field :tag_list %>
+        </div>
+        
+        <b>Tags:</b>
+          <%= raw @user.tag_list.join(', ') %>
+        
+        <br><br>
+        <%= f.submit :class =>'btn btn-default' %>
       </div>
 
       

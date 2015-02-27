@@ -10,12 +10,20 @@ class UsersController < ApplicationController
 	  @users = User.all
 	end
 
+	def edit
+	end
+
+	def update
+		@user = User.find(params[:id])
+	end
+
 	def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :tag_list => []) ## Rails 4 strong params usage
     end
 
     def sign_up_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
 
