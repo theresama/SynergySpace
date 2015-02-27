@@ -1,4 +1,4 @@
-<%= form_for(@space) do |f| %>
+<%= form_for(@space, :html => { :multipart => true }) do |f| %>
 	<div class="col-md-12">
 		<div class="col-md-5">
 			<% if @space.errors.any? %>
@@ -115,6 +115,9 @@
 					<%= f.text_area :description , :rows => "10", :class => "form-control" %>
 				</div>
 			</div>
+
+			<br>avatar<br>
+			  <%= f.file_field :avatar %>
 
 			<div class="actions input-section">
 				<%= f.submit :submit , :class => "form-control" %>

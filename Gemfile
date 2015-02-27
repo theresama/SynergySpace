@@ -59,6 +59,9 @@ gem 'puma'
 #for users to tag interests
 gem 'acts-as-taggable-on', '~> 3.4'
 
+#image upload
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 
 group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3'
