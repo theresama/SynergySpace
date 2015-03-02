@@ -9,33 +9,84 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true, :class=>'form-control' %>
 
-        <%= f.label :occupation %>
-        <%= f.text_field :occupation, autofocus: true, :class=>'form-control' %>
+        <div>
+            Add Your <%= f.label :avatar %>:
+            <%= f.file_field :avatar %>
+        </div>
 
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, :class=>'form-control' %>
+
+        <div class="form-group">
+            <%= f.label :name  %>
+            <div class="col-sm-12">
+                <%= f.text_field :name, autofocus: true, class: 'form-control'  %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :occupation%>
+            <div class="col-sm-12">
+                <%= f.text_field :occupation, autofocus: true, :class=>'form-control' %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :email   %>
+            <div class="col-sm-12">
+                <%= f.email_field :email, class: 'form-control'  %>
+            </div>
+        </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           Currently waiting confirmation for: <%= resource.unconfirmed_email %>
         <% end %>
 
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, autocomplete: "off", :class=>'form-control' %>
+        <div class="form-group">
+            <%= f.label :password  %> <i>(leave blank if you don't want to change it)</i>
+            <div class="col-sm-12">
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control'  %>
+            </div>
+        </div>
 
-        <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off", :class=>'form-control' %>
+        <div class="form-group">
+            <%= f.label :password_confirmation  %>
+            <div class="col-sm-12">
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'  %>
+            </div>
+        </div>
 
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-          <%= f.password_field :current_password, autocomplete: "off", :class=>'form-control' %></div>
+        <div class="form-group">
+            <%= f.label :current_password  %> <i>(we need your current password to confirm your changes)</i>
+            <div class="col-sm-12">
+                <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+            </div>
+        </div>
 
-        <%= f.submit class: 'btn btn-default' %>
+        <div class="field">
+          <%= f.label :tag_list, "Your tags (separated by commas)" %><br/>
+          <%= f.text_field :tag_list %>
+        </div>
+        
+        <b>Tags:</b>
+          <%= raw @user.tag_list.join(', ') %>
+        
+        <br><br>
+
+
+        <%= f.submit "Update", class: "btn btn-primary" %>
+
+
+
       </div>
 
       
     <% end %>
+
+    <h5>Cancel my account</h5>
+
+        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-default btn-xs' %></p>
+
+        <%= link_to "Back", :back %>
 
   </form>
 

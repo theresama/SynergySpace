@@ -1,4 +1,6 @@
 class Space < ActiveRecord::Base
+	has_attached_file :avatar
+	validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"], :default_url => "/images/:style/missing.png"
 	belongs_to :user
 	default_scope -> { order(created_at: :desc) }
 	validates :user_id, presence: true

@@ -6,7 +6,8 @@
 
   <div class="space">
     <div class="Media">
-      <img class="Media-figure" src="holder.js/400x275/industrial" alt="">
+      
+      <%= image_tag space.avatar.url %>
       <div class="Media-body">
         <h4 class="spacename"><%= link_to space.name, space %></h4>
         <p class="address"><%= space.streetnum %> <%= space.street %>, <%= space.city %>, <%= space.state %></p>

@@ -1,7 +1,7 @@
 <% provide(:title, 'Sign up') %>
 
 <h1 class="text-center">Sign up</h1>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
   <%= devise_error_messages! %>
 
   <%= f.label :name %>
@@ -17,6 +17,21 @@
 
   <div><%= f.label :password_confirmation %><br /><i class="fa fa-lock"></i>
     <%= f.password_field :password_confirmation, autocomplete: "off",:class => 'inputbox' %></div>
+
+  <div class="field">
+    <%= f.label :interest_list, "Your interests (separated by commas)" %><br/>
+    <%= f.text_field :tag_list %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skills_list, "Your skills (separated by commas)" %><br/>
+    <%= f.text_field :skill_list %>
+  </div>
+
+  <div>
+      Add Your <%= f.label :avatar %>:
+      <%= f.file_field :avatar %>
+  </div>
 
   <div><%= f.submit "Sign up"%></div>
 
