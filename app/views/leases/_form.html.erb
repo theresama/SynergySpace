@@ -28,12 +28,10 @@
       <%= f.submit %>
     </div>
     <% else %>
-    <div class="field">
-      <%= f.label :Accept_Application %><br>
-      <%= f.hidden_field :accepted, :value => "true" %>
-    </div>
+      
     <div class="actions">
-      <%= f.submit :approve_application%>
+      <%= f.hidden_field :accepted, :value => "true" %>
+      <%= f.submit "Approve Application" %>
     </div>
   <% end %>
 
