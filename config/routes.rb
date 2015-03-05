@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :leases
+
   post '/rate' => 'rater#create', :as => 'rate'
   
 
