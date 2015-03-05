@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     :controllers => { registrations: 'registrations' }
 
   resources :users
-  resources :spaces
+  resources :spaces do
+    resources :leases
+  end
 
 
   get 'welcome' => 'pages#welcome'

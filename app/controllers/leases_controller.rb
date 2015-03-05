@@ -1,4 +1,6 @@
 class LeasesController < ApplicationController
+  before_filter :authenticate_user!
+
   before_action :set_lease, only: [:show, :edit, :update, :destroy]
 
   # GET /leases
@@ -24,7 +26,9 @@ class LeasesController < ApplicationController
   # POST /leases
   # POST /leases.json
   def create
-    @lease = Lease.new(lease_params)
+    @space = Space.find(params[:space_id])
+    @lease = @space.leases.build(lease_params)
+    @lease.user_id = current_user.id
 
     respond_to do |format|
       if @lease.save

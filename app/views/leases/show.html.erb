@@ -2,12 +2,17 @@
 
 <p>
   <strong>User:</strong>
-  <%= @lease.user %>
+  <%= @lease.user.name %>
 </p>
 
 <p>
   <strong>Space:</strong>
-  <%= @lease.space %>
+  <%= @lease.space.name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @lease.space.user.name %>
 </p>
 
 <p>
@@ -32,3 +37,6 @@
 
 <%= link_to 'Edit', edit_lease_path(@lease) %> |
 <%= link_to 'Back', leases_path %>
+
+
+

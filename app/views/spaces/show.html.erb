@@ -67,3 +67,24 @@
   <%= link_to 'Destroy', @space, method: :delete, data: { confirm: 'Are you sure?' } %> | 
 <% end%>
 <%= link_to 'Back', spaces_path %>
+
+<h2>Apply to lease</h2>
+<%= form_for([@space, @space.leases.build]) do |f| %>
+  <div class="field">
+      <%= f.label :startdate %><br>
+      <%= f.datetime_select :startdate %>
+    </div>
+    <div class="field">
+      <%= f.label :enddate %><br>
+      <%= f.datetime_select :enddate %>
+    </div>
+    <div class="field">
+      <%= f.label :message %><br>
+      <%= f.text_area :message %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+ 
+<%= link_to 'Back', leases_path %> |
