@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 1
+  space: 1
+  startdate: 2015-03-04 19:51:42
+  enddate: 2015-03-04 19:51:42
+  message: MyText
+  accepted: false
+
+two:
+  user: 1
+  space: 1
+  startdate: 2015-03-04 19:51:42
+  enddate: 2015-03-04 19:51:42
+  message: MyText
+  accepted: false
