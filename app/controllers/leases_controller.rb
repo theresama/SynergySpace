@@ -55,6 +55,17 @@ class LeasesController < ApplicationController
     end
   end
 
+  def confirm
+    lease_id = params[:lease_id]
+    lease = Lease.where(id: lease_id).first
+    if lease
+      lease.approved = true
+    end
+    render :json =>  { :status => :ok }
+  end
+
+
+
   # DELETE /leases/1
   # DELETE /leases/1.json
   def destroy

@@ -1,14 +1,16 @@
 <h1>Listing leases</h1>
 
+<h2>Review Applicants</h2>
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <th>Applicant</th>
       <th>Space</th>
       <th>Startdate</th>
       <th>Enddate</th>
       <th>Message</th>
       <th>Accepted</th>
+      <th>View</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,20 +18,58 @@
   <tbody>
     <% @leases.each do |lease| %>
       <tr>
-        <td><%= lease.user %></td>
-        <td><%= lease.space %></td>
-        <td><%= lease.startdate %></td>
-        <td><%= lease.enddate %></td>
-        <td><%= lease.message %></td>
-        <td><%= lease.accepted %></td>
-        <td><%= link_to 'Show', lease %></td>
-        <td><%= link_to 'Edit', edit_lease_path(lease) %></td>
-        <td><%= link_to 'Destroy', lease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if lease.space.user == current_user %>
+          <td><%= lease.user.name %></td>
+          <td><%= lease.space.name %></td>
+          <td><%= lease.startdate %></td>
+          <td><%= lease.enddate %></td>
+          <td><%= lease.message %></td>
+          <% if not lease.accepted %>
+            <td><%= link_to 'Approve Application', edit_lease_path(lease) %></td>
+          <% else %>
+            <td><%= lease.accepted %></td>
+          <% end %>
+          <td><%= link_to 'Show', lease %></td>
+          <% end %> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Your Applications</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th>
+      <th>Space</th>
+      <th>Price</th>
+      <th>Startdate</th>
+      <th>Enddate</th>
+      <th>Message</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leases.each do |lease| %>
+      <tr>
+        <% if lease.user == current_user %>
+          <td><%= lease.space.user.name %></td>
+          <td><%= lease.space.name %></td>
+          <td><%= lease.space.price %></td>
+          <td><%= lease.startdate %></td>
+          <td><%= lease.enddate %></td>
+          <td><%= lease.message %></td>
+          <td><%= lease.accepted %></td>
+          <td><%= link_to 'Show', lease %></td>
+          <td><%= link_to 'Edit', edit_lease_path(lease) %></td>
+          <td><%= link_to 'Destroy', lease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Lease', new_lease_path %>

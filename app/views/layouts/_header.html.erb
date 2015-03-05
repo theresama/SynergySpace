@@ -17,6 +17,7 @@
               <%= link_to "Listings",   '/' %>
             </li>
             <% if user_signed_in? %>
+            <li><a href="/leases">Applications</a></li>
               <li><a href="/spaces/new">List Your Space</a></li>
               <li>
                 <a href="/users/<%= current_user.id %>">Profile</a>

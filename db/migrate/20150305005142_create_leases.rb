@@ -5,7 +5,7 @@ class CreateLeases < ActiveRecord::Migration
       t.datetime :startdate
       t.datetime :enddate
       t.text :message
-      t.boolean :accepted
+      t.boolean :accepted, default: false
 
       t.timestamps
 
