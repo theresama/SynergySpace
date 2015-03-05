@@ -3,12 +3,14 @@
 
   <p>
     <strong>User:</strong>
-    <%= @lease.user.name %>
+    <a href="/users/<%= @lease.user.id %>"><%= @lease.user.name %></a>
   </p>
 
   <p>
     <strong>Space:</strong>
-    <%= @lease.space.name %>
+    <a href="/spaces/<%= @lease.space.id %>">
+      <%= @lease.space.name %>
+    </a>
   </p>
 
   <p>

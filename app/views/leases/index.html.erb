@@ -12,7 +12,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Applicant</th>
+          <th>View Applicant</th>
           <th>Space</th>
           <th>Startdate</th>
           <th>Enddate</th>
@@ -28,8 +28,17 @@
           <tr>
             <% if lease.space != nil %>
               <% if lease.space.user == current_user %>
-                <td><%= lease.user.name %></td>
-                <td><%= lease.space.name %></td>
+                <td>
+                  <a href="/users/<%= lease.user.id %>">
+                  <%= lease.user.name %>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="/spaces/<%= lease.space.id %>">
+                    <%= lease.space.name %>
+                  </a>
+                </td>
                 <td><%= lease.startdate %></td>
                 <td><%= lease.enddate %></td>
                 <td><%= lease.message %></td>
@@ -75,8 +84,16 @@
           <tr>
             <% if lease.space != nil %>
               <% if lease.user == current_user %>
-                <td><%= lease.space.user.name %></td>
-                <td><%= lease.space.name %></td>
+                <td>
+                  <a href="/users/<%= lease.space.user.id %>">
+                    <%= lease.space.user.name %>
+                  </a>
+                </td>
+                <td>
+                  <a href="/spaces/<%= lease.space.id %>">
+                    <%= lease.space.name %>
+                  </a>
+                </td>
                 <td><%= lease.space.price %></td>
                 <td><%= lease.startdate %></td>
                 <td><%= lease.enddate %></td>
