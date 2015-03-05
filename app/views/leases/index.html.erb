@@ -1,75 +1,97 @@
-<h1>Listing leases</h1>
+<main class="page">
 
-<h2>Review Applicants</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Applicant</th>
-      <th>Space</th>
-      <th>Startdate</th>
-      <th>Enddate</th>
-      <th>Message</th>
-      <th>Accepted</th>
-      <th>View</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @leases.each do |lease| %>
-      <tr>
-        <% if lease.space.user == current_user %>
-          <td><%= lease.user.name %></td>
-          <td><%= lease.space.name %></td>
-          <td><%= lease.startdate %></td>
-          <td><%= lease.enddate %></td>
-          <td><%= lease.message %></td>
-          <% if not lease.accepted %>
-            <td><%= link_to 'Approve Application', edit_lease_path(lease) %></td>
-          <% else %>
-            <td><%= lease.accepted %></td>
-          <% end %>
-          <td><%= link_to 'Show', lease %></td>
-          <% end %> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><h3>Review Applicants</h3></div>
+    <div class="panel-body">
+      <p>Review the lease applications submitted for your spaces. </p>
+    </div>
 
-<h2>Your Applications</h2>
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Applicant</th>
+          <th>Space</th>
+          <th>Startdate</th>
+          <th>Enddate</th>
+          <th>Message</th>
+          <th>Accepted</th>
+          <th>View</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Owner</th>
-      <th>Space</th>
-      <th>Price</th>
-      <th>Startdate</th>
-      <th>Enddate</th>
-      <th>Message</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @leases.each do |lease| %>
-      <tr>
-        <% if lease.user == current_user %>
-          <td><%= lease.space.user.name %></td>
-          <td><%= lease.space.name %></td>
-          <td><%= lease.space.price %></td>
-          <td><%= lease.startdate %></td>
-          <td><%= lease.enddate %></td>
-          <td><%= lease.message %></td>
-          <td><%= lease.accepted %></td>
-          <td><%= link_to 'Show', lease %></td>
-          <td><%= link_to 'Edit', edit_lease_path(lease) %></td>
-          <td><%= link_to 'Destroy', lease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tbody>
+        <% @leases.each do |lease| %>
+          <tr>
+            <% if lease.space != nil %>
+              <% if lease.space.user == current_user %>
+                <td><%= lease.user.name %></td>
+                <td><%= lease.space.name %></td>
+                <td><%= lease.startdate %></td>
+                <td><%= lease.enddate %></td>
+                <td><%= lease.message %></td>
+                <% if not lease.accepted %>
+                  <td><%= link_to 'Approve Application', edit_lease_path(lease) %></td>
+                <% else %>
+                  <td><%= lease.accepted %></td>
+                <% end %>
+                <td><%= link_to 'Show', lease %></td>
+                <% end %> 
+            <% end %>
+          </tr>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
 
-<br>
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><h3>Your Applications</h3></div>
+    <div class="panel-body">
+      <p>These are applications you've submitted to others' spaces.</p>
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Owner</th>
+          <th>Space</th>
+          <th>Price</th>
+          <th>Startdate</th>
+          <th>Enddate</th>
+          <th>Message</th>
+          <th>Status</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @leases.each do |lease| %>
+          <tr>
+            <% if lease.space != nil %>
+              <% if lease.user == current_user %>
+                <td><%= lease.space.user.name %></td>
+                <td><%= lease.space.name %></td>
+                <td><%= lease.space.price %></td>
+                <td><%= lease.startdate %></td>
+                <td><%= lease.enddate %></td>
+                <td><%= lease.message %></td>
+                <td><%= lease.accepted %></td>
+                <td><%= link_to 'Show', lease %></td>
+                <td><%= link_to 'Edit', edit_lease_path(lease) %></td>
+                <td><%= link_to 'Destroy', lease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+

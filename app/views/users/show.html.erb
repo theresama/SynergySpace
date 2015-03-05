@@ -1,27 +1,37 @@
-
-<div class="profile-wrapper">
-	<div class="person">
-	  <div class="Media">
-	    <div class="Media-figure" >
-	    	<img src="holder.js/300x300/social" alt="">
-	    	<%= image_tag @user.avatar.url %>
-
-	    	<!-- <input name="tags" id="tags" value="foo,bar,baz" /> -->
+<main class="page">
 
 
+	<div class="jumbotron">
+	  <h1><%= @user.name %></h1>
+	  
+	  <p>
+	  	<%= @user.occupation %>
+	  </p>
+	</div>
 
-	    </div>
-	    <div class="Media-body">
-	      <h4 class="username"><%= @user.name %></h4>
+	<div class="profile-wrapper autoflow">
+	  <div class="col-md-12">
+	    <div class="col-md-6">
 	      <p>
-	      	<span class="info">Reputation:</span>
-	      	<%= rating_for @user, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
+	        <strong>Email:</strong>
+	        <%= @user.email %>
 	      </p>
-	      <p><span class="info">Email:</span><%= @user.email %></p>
+
+			<p>
+				<span class="info">Reputation:</span>
+				<%= rating_for @user, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
+			</p>
+	    </div>
+	    <div class="col-md-6">
+	      <%= image_tag @user.avatar.url, :class => "user-photo"%>
 	    </div>
 	  </div>
+
 	</div>
-</div>
+
+
+</main>
+
 
 <script>
 	$(function(){

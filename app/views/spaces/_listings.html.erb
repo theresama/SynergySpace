@@ -6,8 +6,7 @@
 
   <div class="space">
     <div class="Media">
-      
-      <%= image_tag space.avatar.url , :class => "thumb" %>
+      <%= image_tag space.avatar.url , :class => "thumb space-photo" %>
       <div class="Media-body">
         <h4 class="spacename"><%= link_to space.name, space %></h4>
         <p class="address"><%= space.streetnum %> <%= space.street %>, <%= space.city %>, <%= space.state %></p>
@@ -19,9 +18,12 @@
           <%= rating_for space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
         </p>
 
+        <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
       </div>
-      <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %> |
     </div>
+
+    <hr></hr>
   </div>
 
   <% end %>

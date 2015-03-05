@@ -1,91 +1,89 @@
-<p id="notice"><%= notice %></p>
+<main class="page">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @space.name %>
-</p>
+  <div class="jumbotron autoflow">
+    <div class="col-md-12">
+      <h1><%= @space.name %> </h1>
+      <p><%= @space.streetnum %> <%= @space.street %></p>
+      <p><%= @space.city %>, <%= @space.state %></p>
+      <p><%= @space.areacode %></p>
+    </div>
 
-<p>
-  <strong>Owner:</strong>
-  <%= @space.user.name %>
-</p>
+  </div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @space.spacetype %>
-</p>
-
-<p>
-  <strong>Streetnum:</strong>
-  <%= @space.streetnum %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @space.street %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @space.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @space.state %>
-</p>
-
-<p>
-  <strong>Areacode:</strong>
-  <%= @space.areacode %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @space.price %>
-</p>
-
-<p>
-  <strong>Vacancies:</strong>
-  <%= @space.vacancies %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @space.description %>
-</p>
-
-<p>
-  <strong>Avg Rating:</strong>
-  <%= rating_for @space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
-</p>
-
-<%= image_tag @space.avatar.url %>
-
-<% if current_user == @space.user %>
-  <%= link_to 'Edit', edit_space_path(@space) %> |
-  <%= link_to 'Destroy', @space, method: :delete, data: { confirm: 'Are you sure?' } %> | 
-<% end%>
-<%= link_to 'Back', spaces_path %>
-
-<% if current_user != @space.user %>
-  <h2>Apply to lease</h2>
-  <%= form_for([@space, @space.leases.build]) do |f| %>
-    <div class="field">
-        <%= f.label :startdate %><br>
-        <%= f.datetime_select :startdate %>
+  <div class="space-info-wrapper autoflow">
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <p>
+          <strong>Type:</strong>
+          <%= @space.spacetype %>
+        </p>
+        <p>
+          <strong>Price:</strong>
+          <%= @space.price %>
+        </p>
+        <p>
+          <strong>Vacancies:</strong>
+          <%= @space.vacancies %>
+        </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @space.description %>
+        </p>
+        <p>
+          <strong>Owner:</strong>
+          <%= @space.user.name %>
+        </p>
+        <p>
+          <strong>Avg Rating:</strong>
+          <%= rating_for @space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
+        </p>
       </div>
-      <div class="field">
-        <%= f.label :enddate %><br>
-        <%= f.datetime_select :enddate %>
+      <div class="col-md-6">
+        <%= image_tag @space.avatar.url, :class => "space-photo"%>
       </div>
-      <div class="field">
-        <%= f.label :message %><br>
-        <%= f.text_area :message %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
+    </div>
+
+  </div>
+
+  <% if current_user == @space.user %>
+    <%= link_to 'Edit', edit_space_path(@space) %> |
+    <%= link_to 'Destroy', @space, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+  <% end%>
+
+  <% if current_user != @space.user %>
+
+  <div class="apply-lease-wrapper autoflow">
+    <div class="col-md-8 col-md-offset-2">
+      <h1 class="text-center">Apply to lease</h1>
+      <%= form_for([@space, @space.leases.build]) do |f| %>
+
+        <div class="form-group">
+            <%= f.label :Lease_start_date %><br>
+            <%= f.datetime_select :startdate, :class=>"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Lease_end_date %><br>
+          <%= f.datetime_select :enddate, :class=>"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :message %>
+          <p class="help-block">
+            Write a message to the Space Owner expressing your interest in the space. Explain why you would be a great fit for this space's synergy. Include any additional info or questions for the Owner.
+          </p>
+          <%= f.text_area :message , :class=>"form-control", :rows=>"7"%>
+        </div>
+
+        <div class="actions">
+          <%= f.submit :class=>"btn btn-default" %>
+        </div>
+      <% end %>
+    </div>
+    
+  </div>
+
   <% end %>
-<% end %>
+
+</main>
+
 

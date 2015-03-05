@@ -21,5 +21,70 @@
  body {
    height: 100%;
    width: 100%;
+   background: #fafafa;
  }
+
+ footer{
+ 	bottom: 0px;
+ 	background-color: rgba(248,248,248, 1);
+ 	border-top: 1px solid #e7e7e7;
+ 	padding-top: 30px;
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: center;
+ }
+
+ a{
+ 	text-decoration: none;
+ }
+
+ a:hover{
+ 	text-decoration:none;
+ 	background: none;
+ }
+
+.page{
+	width: 75%; 
+	margin: auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.jumbotron{
+	padding-left: 48px;
+}
+
+.pull-left{
+	float: left;
+}
+
+.pull-right{
+	float: right;	
+}
+
+.clearfix{
+	clear: both;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.autoflow{
+	overflow: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
