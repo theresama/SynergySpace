@@ -3,7 +3,6 @@
 <div class="edit-wrapper">
   <h2 class="secondary-heading">Edit Your Info </h2>
 
-<form>
     
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
@@ -87,7 +86,6 @@
 
         <%= link_to "Back", :back %>
 
-  </form>
 
   
 
