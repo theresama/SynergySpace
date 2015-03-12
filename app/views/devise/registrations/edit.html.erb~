@@ -70,21 +70,13 @@
             <b>Tags:</b>
               <%= raw @user.tag_list.join(', ') %>
             
-            <br><br>
-
-
-<<<<<<< HEAD
             <%= f.submit "Update", class: "btn btn-primary" %>
+
+	    <br>
 
 
 
           </div>
-=======
-        <%= button_to "update", class: "btn btn-primary" %>
-
-
-
->>>>>>> Ben
 
           
         <% end %>
