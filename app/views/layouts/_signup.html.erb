@@ -11,7 +11,7 @@
   <%= f.text_field :occupation, autofocus: true, :class=>'inputbox', :pattern => '[a-zA-Z]', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30'%><br />
 
 <%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true, :class => 'inputbox', :type =>'email', :placeholder =>'Enter your email', :title => 'Enter a valid email', :required => true, :pattern => '{1}[.]{1}' %><br />
+  <%= f.email_field :email, autofocus: true, :class => 'inputbox', :type =>'email', :placeholder =>'Enter your email', :title => 'Enter a valid email', :required => true %><br />
 
   <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
     <%= f.password_field :password, autocomplete: "off",:class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :required => true, :pattern => '.{8,}' %>
