@@ -4,35 +4,25 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, autofocus: true, :class=>'form-control' %>
+<%= f.label :name %><br />
+<%= f.text_field :name, autofocus: true, :class=>'inputbox', :pattern => '[a-zA-Z]{1,}', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30', :required => true %><br />
 
-  <%= f.label :occupation %>
-  <%= f.text_field :occupation, autofocus: true, :class=>'form-control' %>
+  <%= f.label :occupation %><br />
+  <%= f.text_field :occupation, autofocus: true, :class=>'inputbox', :pattern => '[a-zA-Z]{1,}', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30'%><br />
 
-  <div><%= f.label :email %><br /><i class="fa fa-key"></i><%= f.email_field :email, autofocus: true, :class => 'inputbox' %></div>
+<%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true, :class => 'inputbox', :type =>'email', :placeholder =>'Enter your email', :title => 'Enter a valid email', :required => true %><br />
 
-  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br /><i class="fa fa-unlock-alt"></i>
-    <%= f.password_field :password, autocomplete: "off",:class => 'inputbox' %></div>
+  <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+    <%= f.password_field :password, autocomplete: "off",:class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :required => true, :pattern => '.{8,}' %>
 
-  <div><%= f.label :password_confirmation %><br /><i class="fa fa-lock"></i>
-    <%= f.password_field :password_confirmation, autocomplete: "off",:class => 'inputbox' %></div>
+<%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off",:class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :required => true, :pattern => '.{8,}' %><br />
 
-  <div class="field">
-    <%= f.label :interest_list, "Your interests (separated by commas)" %><br/>
-    <%= f.text_field :tag_list %>
-  </div>
-
-  <div class="field">
-    <%= f.label :skills_list, "Your skills (separated by commas)" %><br/>
-    <%= f.text_field :skill_list %>
-  </div>
-
-  <div>
       Add Your <%= f.label :avatar %>:
       <%= f.file_field :avatar %>
-  </div>
 
+<br />
   <div><%= f.submit "Sign up"%></div>
 
 <% end %>
