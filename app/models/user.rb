@@ -8,9 +8,10 @@ class User < ActiveRecord::Base
   	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
-
     validates :name, presence: true
+    validates :email, presence: true
+    validates :occupation, presence: true
+    validates :avatar, presence: true
 
 
     ratyrate_rateable "reputation"
