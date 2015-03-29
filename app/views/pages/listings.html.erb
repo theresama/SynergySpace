@@ -1,0 +1,33 @@
+<div class="search-wrapper">
+
+  <div class="search-panel">
+
+    <div class="form-group">
+      <%= form_tag(listings_search_path) do %>
+
+        <form class="form-inline search-form">
+          <%= select_tag :city , 
+            "<option>New York</option>
+              <option>Toronto</option>
+              <option>San Francisco</option>".html_safe, 
+            class:"form-control formfield input-lg", style:"display:inline" %>
+
+          <%= submit_tag "Search", :disable_with => "Submitting...", class:"btn btn-default formfield input-lg", style:"background: #E5E3E3" %>
+
+        </form>
+
+      <% end %>
+    </div>
+
+    
+
+  </div>
+</div>
+
+
+<div class="spaces-display-wrapper">
+
+  <%= render "spaces/listings" %>
+
+
+</div>

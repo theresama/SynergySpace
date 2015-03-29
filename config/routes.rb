@@ -20,7 +20,10 @@ Rails.application.routes.draw do
   end
 
 
-  get 'welcome' => 'pages#welcome'
+  get 'listings' => 'pages#listings'
+  get 'listings/search' => 'pages#listings'
+  post 'listings/search' => 'pages#listings'
+
   get 'dashboard' => 'admin#dashboard'
   get 'dashboard/users' => 'admin#indexUsers'
   get 'dashboard/spaces' => 'admin#indexSpaces'

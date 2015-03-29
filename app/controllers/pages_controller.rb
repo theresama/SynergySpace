@@ -1,7 +1,11 @@
 class PagesController < ApplicationController
 
-	def welcome
-	  @spaces = Space.all
+	def listings
+		if params[:city]
+			@spaces = Space.where(city: params[:city])
+		else
+			@spaces = Space.all
+		end
 	end
 
 	def home
@@ -10,7 +14,7 @@ class PagesController < ApplicationController
 			if current_user.admin?
 				redirect_to dashboard_path
 			else
-				redirect_to welcome_path
+				redirect_to listings_path
 			end
 			return
 		end  
