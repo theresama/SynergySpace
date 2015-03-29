@@ -36,6 +36,21 @@
 	  	        </div>
 	  	      </div>
 	        <% end %>
+	        <% if @leases.count != 0 %>
+	        	<div class="panel panel-default">
+	        		<div class="panel-heading">
+	        		  <h3 class="panel-title">Your Spaces</h3>
+	        		</div>
+	        		<div class="panel-body">
+	        			<% @leases.each do |lease| %>
+	        			<a href="/spaces/<%= lease.space.id %>">
+	        				<p><%= lease.space.name %></p>
+	        			</a>
+	        			<% end %>
+	        		</div>
+	        	</div>
+	        <% end %>
+	        
 	        <% if @social.count != 0 %>
 	          <div class="panel panel-default">
 	            <div class="panel-heading">

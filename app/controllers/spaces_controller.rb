@@ -11,7 +11,7 @@ class SpacesController < ApplicationController
   # GET /spaces/1
   # GET /spaces/1.json
   def show
-
+    @leased = Lease.where(user: current_user, space: @space)
   end
 
   # GET /spaces/new

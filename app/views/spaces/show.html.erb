@@ -51,7 +51,7 @@
     <%= link_to 'Destroy', @space, method: :delete, data: { confirm: 'Are you sure?' } %> | 
   <% end%>
 
-  <% if current_user != @space.user %>
+  <% if current_user != @space.user and @leased.count == 0%>
 
   <div class="apply-lease-wrapper autoflow">
     <div class="col-md-8 col-md-offset-2">
