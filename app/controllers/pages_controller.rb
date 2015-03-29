@@ -1,8 +1,11 @@
 class PagesController < ApplicationController
 
 	def listings
-		if params[:city]
+		if params[:city] && params[:min_price] && params[:max_price]
 			@spaces = Space.where(city: params[:city])
+			start_price = params[:min_price]
+			end_price = params[:max_price]
+			@spaces = @spaces.where("price between (?) and (?)", start_price, end_price)
 		else
 			@spaces = Space.all
 		end

@@ -10,9 +10,19 @@
             "<option>New York</option>
               <option>Toronto</option>
               <option>San Francisco</option>".html_safe, 
-            class:"form-control formfield input-lg", style:"display:inline" %>
+            class:"form-control formfield", style:"display:inline" %>
 
-          <%= submit_tag "Search", :disable_with => "Submitting...", class:"btn btn-default formfield input-lg", style:"background: #E5E3E3" %>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Min $</span>
+            <%= text_field_tag :min_price, (params[:min_price] or 1), class:"form-control", style:"" %>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Max $</span>
+            <%= text_field_tag :max_price, (params[:max_price] or 99999), class:"form-control", style:""  %>
+          </div>
+
+          <%= submit_tag "Search", :disable_with => "Submitting...", class:"btn btn-default btn-block", style:"background: #E5E3E3" %>
 
         </form>
 
