@@ -21,10 +21,7 @@ class LeasesController < ApplicationController
 
   # GET /leases/1/edit
   def edit
-    if params[:approved]
-      @space = Space.find(params[:space_id])
-      @space.vacancies = @space.vacancies - 1
-    end
+
   end
 
   # POST /leases
@@ -50,6 +47,10 @@ class LeasesController < ApplicationController
   def update
     respond_to do |format|
       if @lease.update(lease_params)
+        if @lease.accepted == true
+          vac = @space.vacancies - 1
+          @space.update_attribute(:vacancies, vac)
+        end
         format.html { redirect_to @lease, notice: 'Lease was successfully updated.' }
         format.json { render :show, status: :ok, location: @lease }
       else
@@ -84,6 +85,7 @@ class LeasesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lease
       @lease = Lease.find(params[:id])
+      @space = Space.find_by(id: @lease.space)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

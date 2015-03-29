@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305012444) do
+ActiveRecord::Schema.define(version: 20150329210413) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -80,12 +80,14 @@ ActiveRecord::Schema.define(version: 20150305012444) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "vacancies"
-    t.string   "description"
-    t.decimal  "price",               precision: 8, scale: 2
+    t.text     "description",         limit: 255
+    t.decimal  "price",                           precision: 8, scale: 2
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
   create_table "taggings", force: true do |t|

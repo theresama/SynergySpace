@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 			end_price = params[:max_price]
 			@spaces = @spaces.where("price between (?) and (?)", start_price, end_price)
 		else
-			@spaces = Space.all
+			@spaces = Space.where("vacancies > ?", 0)
 		end
 	end
 

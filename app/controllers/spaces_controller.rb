@@ -5,13 +5,13 @@ class SpacesController < ApplicationController
   # GET /spaces
   # GET /spaces.json
   def index
-    @spaces = Space.all
+    @spaces = Space.where("vacancies > ?", 0)
   end
 
   # GET /spaces/1
   # GET /spaces/1.json
   def show
-    @leases = Lease.where(space: params[:id], accepted: true)
+
   end
 
   # GET /spaces/new
