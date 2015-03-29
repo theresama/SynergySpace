@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 
 	def dashboard
 		if not current_user.admin?
-			redirect_to welcome_path
+			redirect_to listings_path
 		end
 	end
 

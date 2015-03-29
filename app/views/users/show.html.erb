@@ -10,25 +10,50 @@
 	</div>
 
 	<div class="profile-wrapper autoflow">
-	  <div class="col-md-12">
-	    <div class="col-md-6">
-	      <p>
-	        <strong>Email:</strong>
-	        <%= @user.email %>
-	      </p>
+	      <div class="col-md-6">
+	        <p>
+	          <strong>Email:</strong>
+	          <%= @user.email %>
+	        </p>
 
-			<p>
-				<span class="info">Reputation:</span>
-				<%= rating_for @user, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
-			</p>
-	    </div>
-	    <div class="col-md-6">
-	      <%= image_tag @user.avatar.url, :class => "user-photo"%>
-	    </div>
-	  </div>
+	  		<p>
+	  			<span class="info">Reputation:</span>
+	  			<%= rating_for @user, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
+	  		</p>
+	      </div>
+	      <div class="col-md-6">
+	        <% if @owns.count != 0 %>
+	  	      <div class="panel panel-default">
+	  	        <div class="panel-heading">
+	  	          <h3 class="panel-title">Owns:</h3>
+	  	        </div>
+	  	        <div class="panel-body">
+	            	    <% @owns.each do |space| %>
+	            	    	<a href="/spaces/<%= space.id %>">
+	            	    		<p><%= space.name %></p>
+	            	    	</a>
+	            	    <% end %>        
+	  	        </div>
+	  	      </div>
+	        <% end %>
+	        <% if @social.count != 0 %>
+	          <div class="panel panel-default">
+	            <div class="panel-heading">
+	              <h3 class="panel-title">Social Circle</h3>
+	            </div>
+	            <div class="panel-body">
+	              <% @social.each do |u| %>
+	      	        	<a href="/users/<%= u.id %>">
+	      	        		<p><%= u.name %></p>
+	      	        	</a>
+	      	        <% end %>   
+	            </div>
+	          </div>
+	        <% end %>
+	        
+	      </div>
 
 	</div>
-
 
 </main>
 

@@ -46,6 +46,21 @@
 
   </div>
 
+  <% if @leases.count != 0 %>
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Coworkers</h3>
+        </div>
+        <div class="panel-body">
+          <% @leases.each do |lease| %>
+            <a href="/users/<%= lease.user.id %>"><p> <%= lease.user.name %> </p></a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <% if current_user == @space.user %>
     <%= link_to 'Edit', edit_space_path(@space) %> |
     <%= link_to 'Destroy', @space, method: :delete, data: { confirm: 'Are you sure?' } %> | 

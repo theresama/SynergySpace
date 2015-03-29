@@ -18,6 +18,22 @@ class UsersController < ApplicationController
 
 	def show
 	  @user = User.find(params[:id])
+	  @leases = Lease.where(user: params[:id], accepted: true)
+	  @owns = Space.where(user: params[:id])
+	  network = Lease.where(user: params[:id], accepted: true) | Lease.where(space: @owns)
+	  ary = Array.new
+	  all_spaces = Array.new
+	  network.each do |social|
+	  	ary.push(social.user)
+	  end
+	  @leases.each do |s|
+	  	curr = Lease.where(space: s.space, accepted: true)
+	  	curr.each do |c|
+	  		ary.push(c.user)
+	  	end
+	  end
+	  ary.delete(@user)
+	  @social = ary.uniq
 	end
 
 	def index

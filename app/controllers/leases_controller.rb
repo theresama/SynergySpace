@@ -21,6 +21,10 @@ class LeasesController < ApplicationController
 
   # GET /leases/1/edit
   def edit
+    if params[:approved]
+      @space = Space.find(params[:space_id])
+      @space.vacancies = @space.vacancies - 1
+    end
   end
 
   # POST /leases

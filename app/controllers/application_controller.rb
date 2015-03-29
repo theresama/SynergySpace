@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   	if current_user.admin?
   		dashboard_path
   	else
-  		welcome_path
+  		listings_path
   	end
   end
 
