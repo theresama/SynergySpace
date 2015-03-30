@@ -40,6 +40,11 @@
 			<% end %>
 			<%= yield %>
 		</main>
+	<% elsif not current_page?(root_path) %>
+		<%= render 'layouts/header' %>
+		<main class="page-container">
+			<%= yield %>
+		</main>
 	<% else %>
 		<%= yield %>
 	<% end %>
@@ -55,7 +60,7 @@
 	
 	<footer>
 		<p>SynergySpace by Blue Screen || About || 
-			<a href="/welcome">Listings</a> || 
+			<a href="/spaces">Listings</a> || 
 			<a href="/signup">Signup</a> || 
 			<a href="/login">Login</a>
 		</p>

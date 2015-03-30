@@ -40,7 +40,7 @@
 		font: 2em 'Droid Serif', sans-serif;
 		font-weight: 500;
 		font-style: italic;
-		margin:10px;
+		margin:10px 0px;
 	}
 
 	.address{
@@ -49,12 +49,21 @@
 	}
 
 	.info{
-		font-weight: normal;
-		font: 1em serif;
+		font-weight: bold;
 		margin:0px;
 	}
 }
 
+.space-photo{
+	width: 100%;
+}
+
+.photo-wrap{
+	width: 300px;
+	max-height: 250px;
+	overflow: hidden;
+	margin-right: 2em;
+}
 
 .Media {
   display: -webkit-flex;

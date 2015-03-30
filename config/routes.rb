@@ -1,24 +1,16 @@
 Rails.application.routes.draw do
-  resources :leases
-
-  post '/rate' => 'rater#create', :as => 'rate'
-  
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root to: 'pages#home'
-  
-  devise_for :users, :path => '', 
-    :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'},
-    :controllers => { registrations: 'registrations' }
-
-  resources :users
+  resources :users, only: [:show, :edit, :update]
   resources :spaces do
     resources :leases
   end
+  
+  root to: 'pages#home'
 
+  put 'users/:id' => 'users#update', :as => :id
+  
+  devise_for :users, :path => '', 
+    :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'},
+    :controllers => { :registrations => 'users' }
 
   get 'listings' => 'pages#listings'
   get 'listings/search' => 'pages#listings'
@@ -32,6 +24,10 @@ Rails.application.routes.draw do
   get 'spaces/new' => 'spaces#new'
 
   get 'users/:id' => 'users#show'
+
+  post '/rate' => 'rater#create', :as => 'rate'
+
+  
 
 
   # Example of regular route:

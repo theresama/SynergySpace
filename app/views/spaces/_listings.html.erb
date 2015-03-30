@@ -1,32 +1,75 @@
+<div class="search-wrapper">
+  <div class="search-panel">
+
+    <div class="form-group">
+      <%= form_tag(listings_search_path) do %>
+
+        <form class="form-inline search-form">
+          <%= select_tag :city , 
+            "<option>New York</option>
+              <option>Toronto</option>
+              <option>San Francisco</option>".html_safe, 
+            class:"form-control formfield", style:"display:inline" %>
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Min $</span>
+            <%= text_field_tag :min_price, (params[:min_price] or 1), class:"form-control", style:"" %>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Max $</span>
+            <%= text_field_tag :max_price, (params[:max_price] or 99999), class:"form-control", style:""  %>
+          </div>
+
+          <%= submit_tag "Search", :disable_with => "Submitting...", class:"btn btn-default btn-block", style:"background: #E5E3E3" %>
+
+        </form>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <h1 class="cover-heading text-center heading-spacer">Space Listings</h1>
 <hr></hr>
 <div class="space-wrapper">
 
-  <% @spaces.each do |space| %>
+  <% if @spaces.count == 0 %>
+    <p>Sorry, no spaces match your search criteria.</p>
+  <% else %>
 
-  <div class="space">
-    <div class="Media">
-      <%= image_tag space.avatar.url , :class => "thumb space-photo" %>
-      <div class="Media-body">
-        <h4 class="spacename"><%= link_to space.name, space %></h4>
-        <p class="address"><%= space.streetnum %> <%= space.street %>, <%= space.city %>, <%= space.state %></p>
-        <p><span class="info">Type: </span><%= space.spacetype %></p>
-        <p><span class="info">Price: </span><%= space.price %></p>
-        <p><span class="info">Vacancies: </span><%= space.vacancies %></p>
-        <p class="description"><%= space.description %></p>
-        <p><span class="info">Avg Rating: 
-          <%= rating_for space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
-        </p>
+    <% @spaces.each do |space| %>
 
-        <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %> 
+    <div class="space">
+      <div class="Media">
+        <div class="photo-wrap">
+          <%= image_tag space.avatar.url , :class => "space-photo" %>
+        </div>
+        
+        <div class="Media-body">
+          <h4 class="spacename"><%= link_to space.name, space %></h4>
+          <p class="address"><%= space.streetnum %> <%= space.street %>, <%= space.city %>, <%= space.state %></p>
+          <p><span class="info">Type: </span><%= space.spacetype %></p>
+          <p><span class="info">Price: </span><%= space.price %></p>
+          <p><span class="info">Vacancies: </span><%= space.vacancies %></p>
+          <p class="description"><%= space.description %></p>
+          <p><span class="info">Avg Rating: 
+            <%= rating_for space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
+          </p>
 
+          <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
+        </div>
       </div>
+
+      <hr></hr>
     </div>
 
-    <hr></hr>
-  </div>
+    <% end %>
 
   <% end %>
+
+  
 
   <script>
 
