@@ -1,45 +1,50 @@
 <main class="page">
-  <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>User:</strong>
-    <a href="/users/<%= @lease.user.id %>"><%= @lease.user.name %></a>
-  </p>
+  <div class="panel panel-default">
+    <div class="panel-heading star-col">
+      <p class="space-title top-margin">
+        <a href="/spaces/<%= @lease.space.id %>">
+          <%= @lease.space.name %>
+        </a>
+      </p>
+    </div>
+    <div class="col-md-12 panel panel-default">
+      <div class="space-text-box col-md-6">
+        <p>
+          <strong>User:</strong>
+          <a href="/users/<%= @lease.user.id %>"><%= @lease.user.name %></a>
+        </p>
+        <p>
+          <strong>Owner:</strong>
+          <%= @lease.space.user.name %>
+        </p>
 
-  <p>
-    <strong>Space:</strong>
-    <a href="/spaces/<%= @lease.space.id %>">
-      <%= @lease.space.name %>
-    </a>
-  </p>
+        <p>
+          <strong>Startdate:</strong>
+          <%= @lease.startdate %>
+        </p>
 
-  <p>
-    <strong>Owner:</strong>
-    <%= @lease.space.user.name %>
-  </p>
+        <p>
+          <strong>Enddate:</strong>
+          <%= @lease.enddate %>
+        </p>
 
-  <p>
-    <strong>Startdate:</strong>
-    <%= @lease.startdate %>
-  </p>
+        <p>
+          <strong>Accepted:</strong>
+          <%= @lease.accepted %>
+        </p>
 
-  <p>
-    <strong>Enddate:</strong>
-    <%= @lease.enddate %>
-  </p>
-
-  <p>
-    <strong>Message:</strong>
-    <%= @lease.message %>
-  </p>
-
-  <p>
-    <strong>Accepted:</strong>
-    <%= @lease.accepted %>
-  </p>
-
-  <%= link_to 'Edit', edit_lease_path(@lease) %> |
-  <%= link_to 'Back', leases_path %>
+        <%= link_to 'Edit', edit_lease_path(@lease), class:"btn btn-default" %>
+        <%= link_to 'Back', leases_path, class:"btn btn-default" %>
+      </div>
+      <div class="space-text-box col-md-6">
+        <p>
+          <strong>Message:</strong>
+          <%= @lease.message %>
+        </p>
+      </div>
+    </div>
+  </div>
 </main>
 
 

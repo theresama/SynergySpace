@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :leases
+  resources :leases do 
+    member do
+      put "approve", to: "leases#approve"
+      put "disapprove", to: "leases#disapprove"
+    end
+  end
+
   resources :users, only: [:show, :edit, :update]
   resources :spaces do
     resources :leases
@@ -30,8 +36,14 @@ Rails.application.routes.draw do
 
   post '/rate' => 'rater#create', :as => 'rate'
 
+<<<<<<< HEAD
   get '/admin/makeAdmin' => 'admin#makeAdmin'
   post '/admin/makeAdmin' => 'admin#makeAdmin'
+=======
+  get 'spaces/tagged/:tag', to: 'spaces#index', as: :tag
+
+  
+>>>>>>> master
 
 
   # Example of regular route:

@@ -5,13 +5,22 @@ class SpacesController < ApplicationController
   # GET /spaces
   # GET /spaces.json
   def index
-    @spaces = Space.where("vacancies > ?", 0)
+    if params[:tag]
+      @spaces = Space.tagged_with(params[:tag])
+    else
+      @spaces = Space.where("vacancies > ?", 0)
+    end
   end
 
   # GET /spaces/1
   # GET /spaces/1.json
   def show
     @leased = Lease.where(user: current_user, space: @space)
+    if @leased.count > 0
+      @coworker = true
+    else
+      @coworker = false
+    end
   end
 
   # GET /spaces/new

@@ -73,3 +73,50 @@
 </div>
 
 <%= render "spaces/listings" %>
+
+<script>
+  $(function(){
+    $("#signup").on('click', function(e){
+      $(".popup-cover").toggleClass("hide");
+      $(".signup-wrapper").toggleClass("hide");
+    });
+
+    $("#login").on('click', function(e){
+      $(".popup-cover").toggleClass("hide");
+      $(".login-wrapper").toggleClass("hide");
+    });
+
+
+
+    $('.popup-cover').on('click', function(e) { 
+       if( e.target !== this ) 
+           return;
+        $(".pop-select").addClass("hide");
+        $(".popup-cover").toggleClass("hide");
+    });
+
+
+
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

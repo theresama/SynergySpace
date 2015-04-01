@@ -49,20 +49,12 @@
 		<%= yield %>
 	<% end %>
 
-
-
-	<div class="container">
-		<% flash.each do |message_type, message| %>
-		<div class="alert alert-<%= message_type %>"><%= message %></div>
-		<% end %>
-				
-	</div>
 	
 	<footer>
 		<p>SynergySpace by Blue Screen || About || 
 			<a href="/spaces">Listings</a> || 
 			<a href="/signup">Signup</a> || 
-			<a href="/login">Login</a>
+			<% if not user_signed_in? %><a href="/login">Login</a><% end %>
 		</p>
 	</footer>
 

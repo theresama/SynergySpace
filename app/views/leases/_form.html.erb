@@ -25,13 +25,13 @@
       <%= f.text_area :message %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit class:"btn btn-default top-margin bottom-margin" %>
     </div>
     <% else %>
       
     <div class="actions">
       <%= f.hidden_field :accepted, :value => "true" %>
-      <%= f.submit "Approve Application" %>
+      <%= f.submit "Approve Application", class:"btn btn-default top-margin" %>
     </div>
   <% end %>
 
