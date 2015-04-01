@@ -3,7 +3,15 @@ class UsersController < ApplicationController
 	before_filter :authenticate_user!
 
 	def create
-	  @user = User.create( user_params )
+	    @user = User.new(user_params)
+	    if @user.save!
+	    	log_in @user
+	    	flash[:success] = "Sign up successful!"
+	      	redirect_to root_url
+	    end
+	end
+
+	def new
 	end
 
 	def update
