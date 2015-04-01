@@ -15,16 +15,10 @@
           <script type="text/javascript">
 
           $(function(){
-            
             google.load('visualization', '1.0', {'packages':['corechart']});
 
             // Set a callback to run when the Google Visualization API is loaded.
             google.setOnLoadCallback(drawChart);
-            drawChart();
-          })
-          //$(function () {
-            // Load the Visualization API and the piechart package.
-            
 
             // Callback that creates and populates a data table,
             // instantiates the pie chart, passes in the data and
@@ -51,6 +45,13 @@
               var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
               chart.draw(data, options);
             }
+            
+            drawChart();
+          })
+          //$(function () {
+            // Load the Visualization API and the piechart package.
+            
+            
           //});
           </script>
 
