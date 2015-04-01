@@ -2,21 +2,14 @@ class UsersController < ApplicationController
 
 	before_filter :authenticate_user!
 
-	def create
-	    @user = User.new(user_params)
-	    if @user.save!
-	    	log_in @user
-	    	flash[:success] = "Sign up successful!"
-	      	redirect_to root_url
-	    end
-	end
-
 	def new
 	end
 
 	def update
+		@user = User.find(params[:id])
 		respond_to do |format|
-		  if @user.update(user_params)
+		  if @user.update_attributes(user_params)
+		  	sign_in(@user, :bypass => true)
 		    format.html { redirect_to @user, notice: 'User was successfully updated.' }
 		    format.json { render :show, status: :ok, location: @user }
 		  else
@@ -62,7 +55,7 @@ class UsersController < ApplicationController
 
 	  # Never trust parameters from the scary internet, only allow the white list through.
 	  def user_params
-	    params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :skills, :interests, :occupation, :tag_list )
+	    params.require(:user).permit(:name, :email, :password, :password_confirmation, :occupation, :current_password, :tag_list )
 	  end
 
 end

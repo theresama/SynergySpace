@@ -32,6 +32,8 @@
 					Price: <%= f.text_field :price, :class => "form-control" %><br />
 					Description: <%= f.text_area :description , :rows => "10", :class => "form-control" %>
 
+			  		Tags (revelant vibe): <br/>
+			  		<%= f.text_field :tag_list %>
 					<br>avatar: <%= f.file_field :avatar %><br />
 
 					<%= f.submit :submit , :class => "form-control" %>
