@@ -26,7 +26,7 @@
 					Street: <%= f.text_field :street, :class => "form-control" %><br />
 					City: <%= f.select :city, options_for_select(["Toronto", "New York", "San Francisco"]), :class => 'form-control' %><br /><br />
 					State/Province: <%= f.select :state, options_for_select(["Ontario", "New York", "California"]), :class => 'form-control' %><br /><br />
-					Areacode: <%= f.text_field :areacode, :class => "form-control" %> <br />
+					Postal code: <%= f.text_field :areacode, :class => "form-control" %> <br />
 					Vacancies: <%= f.text_field :vacancies, :class => "form-control" %><br />
 
 					Price: <%= f.text_field :price, :class => "form-control" %><br />
