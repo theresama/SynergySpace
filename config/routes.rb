@@ -36,14 +36,11 @@ Rails.application.routes.draw do
 
   post '/rate' => 'rater#create', :as => 'rate'
 
-<<<<<<< HEAD
   get '/admin/makeAdmin' => 'admin#makeAdmin'
   post '/admin/makeAdmin' => 'admin#makeAdmin'
-=======
+
   get 'spaces/tagged/:tag', to: 'spaces#index', as: :tag
 
-  
->>>>>>> master
 
 
   # Example of regular route:
