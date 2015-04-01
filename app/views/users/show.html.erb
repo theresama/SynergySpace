@@ -12,6 +12,13 @@
 					<div class="label-container">
 					    <span class="user-label">Email:</span> <%= @user.email %><br />
 					    <span class="user-label">Title:</span> <%= @user.occupation %>
+					    <p>
+					    	<span class="user-label">Skills/Interest tags:</span>
+					    	
+					    		<% @user.tag_list.each do |keyword| %>
+						    	 <span class="keywordtag"><%= keyword %></span>
+						    	<% end %>
+					    </p>
 					</div>
 				</div>
 			</div>

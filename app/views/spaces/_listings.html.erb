@@ -21,7 +21,7 @@
             <%= text_field_tag :max_price, (params[:max_price] or 99999), class:"form-control", style:""  %>
           </div>
 
-          <%= submit_tag "Search", :disable_with => "Submitting...", class:"btn btn-default", style:"background: #E5E3E3" %>
+          <%= submit_tag "Search", :disable_with => "Submitting...", class:"btn btn-block btn-default", style:"background: #E5E3E3" %>
 
         </form>
 
@@ -58,9 +58,16 @@
           <p><span class="info">Price: </span><%= space.price %></p>
           <p><span class="info">Vacancies: </span><%= space.vacancies %></p>
           <p class="description"><%= space.description %></p>
-
-          <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default" %> 
-
+          <p>
+            <span class="info">Synergy tags:</span>
+              <% space.tag_list.each do |keyword| %>
+                <a href="/spaces/tagged/<%= keyword %>">
+                  <span class="keywordtag">
+                    <%= keyword %>
+                  </span>
+                </a>
+              <% end %>
+          </p>
         </div>
       </div>
     </div>
