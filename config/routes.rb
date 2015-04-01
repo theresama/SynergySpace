@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :leases
   resources :users, only: [:show, :edit, :update]
   resources :spaces do
     resources :leases
@@ -9,10 +10,10 @@ Rails.application.routes.draw do
 #put 'users/:id' => 'users#update', :as => :id
 
   devise_for :users, :path => '', 
-    :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'},
-    :controllers => { :registrations => 'users' }
+    :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'}
 
   get 'leases' => 'leases#index'
+  get 'leases/:id' => 'leases#index'
 
   get 'listings' => 'pages#listings'
   get 'listings/search' => 'pages#listings'
