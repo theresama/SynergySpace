@@ -37,6 +37,11 @@ class UsersController < ApplicationController
 	  end
 	  ary.delete(@user)
 	  @social = ary.uniq
+	  if @social.include? current_user
+	  	@coworker = true
+	  else
+	  	@coworker = false
+	  end
 	end
 
 	def index

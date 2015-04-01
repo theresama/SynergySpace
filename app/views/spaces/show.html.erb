@@ -86,4 +86,14 @@
 
 </main>
 
+<% if @coworker == false %>
+  <script>
+    $(function(){
+      setTimeout(function(){
+          $(".star > img").unbind('mouseout mouseover click hover');
+          $(".star").css("cursor", "default");
+        },500) 
+    })
+  </script>
+<% end %>
 
