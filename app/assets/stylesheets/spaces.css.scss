@@ -3,8 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
-.panel-heading {
-	min-height: 74px;
+.space-title {
+	font: italic 500 2em "Droid Serif",sans-serif;
+	font-size: 16pt;
+}
+
+.space-text-box {
+	max-width:400px;
+	width: 400px;
+	overflow: hidden;
+	padding:20px;
+}
+
+.star-col {
+	min-height: 64px;
 }
 
 .description {
@@ -19,11 +31,20 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	padding-bottom:20px;
 }
 
 .heading-spacer{
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+
+.top-margin {
+	margin-top:10px
+}
+
+.bottom-margin {
+	margin-bottom:10px
 }
 
 .space-photo{
@@ -108,6 +129,3 @@
    padding-bottom: 30px;
 }
 
-.space-action{
-	margin-left:15px;
-}

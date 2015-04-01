@@ -5,10 +5,10 @@
   <%= devise_error_messages! %>
 
 <%= f.label :name %><br />
-<%= f.text_field :name, autofocus: true, :class=>'inputbox', :pattern => '^[A-Z0-9 _]*[A-Z0-9][A-Z0-9 _]*$', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30', :required => true %><br />
+<%= f.text_field :name, autofocus: true, :class=>'inputbox', :pattern => '^[a-zA-Z0-9 _]*[a-zA-Z0-9][a-zA-Z0-9 _]*$', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30', :required => true %><br />
 
   <%= f.label :occupation %><br />
-  <%= f.text_field :occupation, autofocus: true, :class=>'inputbox', :pattern => '[^[A-Z0-9 _]*[A-Z0-9][A-Z0-9 _]*$', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30'%><br />
+  <%= f.text_field :occupation, autofocus: true, :class=>'inputbox', :pattern => '^[a-zA-Z0-9 _]*[a-zA-Z0-9][a-zA-Z0-9 _]*$', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30'%><br />
 
 <%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true, :class => 'inputbox', :type =>'email', :placeholder =>'Enter your email', :title => 'Enter a valid email', :required => true %><br />

@@ -6,7 +6,7 @@
  .page-container{
    min-height: 80%;
    margin-top:56px;
-   overflow: auto;
+   overflow:auto;
  }
 
  .cover-heading{
@@ -189,6 +189,9 @@
 }
 
 .search-wrapper{
+
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 
   width: 100%;
   overflow: auto;
