@@ -2,7 +2,7 @@
 	<div class="col-md-10">
 		<div class="panel panel-default">
 	        <div class="panel-heading" style="overflow:auto;">
-	    		<h3 class="panel-title" style="float:left;">Submit - <i>Add a new space for users to browse</i></h3>
+	    		<h3 class="panel-title" style="float:left;">Space Action</h3>
 	    	</div>
 			<div class="panel-body">
 				<img class="user-avatar" src="">
@@ -30,14 +30,13 @@
 					Vacancies: <%= f.text_field :vacancies, :class => "form-control" %><br />
 
 					Price: <%= f.text_field :price, :class => "form-control" %><br />
-					Description: <%= f.text_area :description , :rows => "10", :class => "form-control" %>
+					Description: <%= f.text_area :description , :rows => "10", :class => "form-control" %><br />
 
 			  		Tags (revelant vibe): <br/>
-			  		<%= f.text_field :tag_list %>
+			  		<%= f.text_field :tag_list, :class => "form-control" %>
 					<br>avatar: <%= f.file_field :avatar %><br />
 
 					<%= f.submit :submit , :class => "form-control" %>
-				</div>
 				</div>
 			</div>
 		</div>
