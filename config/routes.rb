@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   
   root to: 'pages#home'
 
-  put 'users/:id' => 'users#update', :as => :id
-  
+#put 'users/:id' => 'users#update', :as => :id
+
   devise_for :users, :path => '', 
     :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'},
-    :controllers => { :registrations => 'registrations' }
+    :controllers => { :registrations => 'users' }
 
   get 'listings' => 'pages#listings'
   get 'listings/search' => 'pages#listings'
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'submission' => 'pages#submission'
   get 'spaces/new' => 'spaces#new'
 
-  get 'users/:id' => 'users#show'
+  #get 'users/:id' => 'users#show'
 
   post '/rate' => 'rater#create', :as => 'rate'
 
