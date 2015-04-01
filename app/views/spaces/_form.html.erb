@@ -116,12 +116,19 @@
 				</div>
 			</div>
 
+			<div class="field">
+			  <%= f.label :tag_list, "Space tags (revelant vibe)" %><br/>
+			  <%= f.text_field :tag_list %>
+			</div>
+
 			<br>avatar<br>
 			  <%= f.file_field :avatar %>
 
 			<div class="actions input-section">
 				<%= f.submit :submit , :class => "form-control" %>
 			</div>
+
+			
 		</div>
 
 

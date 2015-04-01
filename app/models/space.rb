@@ -18,4 +18,6 @@ class Space < ActiveRecord::Base
 	validates :areacode, presence: true
 
   	ratyrate_rateable "reputation"
+
+  	acts_as_taggable
 end
