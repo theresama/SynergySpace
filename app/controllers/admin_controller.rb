@@ -5,6 +5,11 @@ class AdminController < ApplicationController
 		if not current_user.admin?
 			redirect_to listings_path
 		end
+
+		@openNum = Space.where("spacetype = 'Open Concept'").count()
+		@cubicleNum = Space.where("spacetype = 'Cubicles'").count()
+		@teamNum = Space.where("spacetype = 'Team'").count()
+		@combinationNum = Space.where("spacetype = 'Combination'").count()
 	end
 
 	def indexUsers
@@ -16,7 +21,12 @@ class AdminController < ApplicationController
 	end
 
 	def makeAdmin
-		user.update_attribute :admin, true
+		@id = params[:id]
+		@adminStatus = params[:adminStatus]
+
+		user = User.find(@id)
+		user.update(:admin => @adminStatus)
+		#user.update_attribute :admin, true
 
 		render :json =>  { :status => :ok }
 	end
