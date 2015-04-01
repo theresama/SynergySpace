@@ -1,45 +1,45 @@
 <main class="page">
   <p id="notice"><%= notice %></p>
 
-  <div class="jumbotron autoflow">
-    <div class="col-md-12">
-      <h1><%= @space.name %> </h1>
-      <p><%= @space.streetnum %> <%= @space.street %></p>
-      <p><%= @space.city %>, <%= @space.state %></p>
-      <p><%= @space.areacode %></p>
-    </div>
-
-  </div>
-
   <div class="space-info-wrapper autoflow">
     <div class="col-md-12">
-      <div class="col-md-6">
-        <p>
-          <strong>Type:</strong>
-          <%= @space.spacetype %>
-        </p>
-        <p>
-          <strong>Price:</strong>
-          <%= @space.price %>
-        </p>
-        <p>
-          <strong>Vacancies:</strong>
-          <%= @space.vacancies %>
-        </p>
-        <p>
-          <strong>Description:</strong>
-          <%= @space.description %>
-        </p>
-        <p>
-          <strong>Owner:</strong>
-          <%= @space.user.name %>
-        </p>
-        <p>
-          <strong>Avg Rating:</strong>
-          <%= rating_for @space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
-        </p>
+      <div class="col-md-7">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h1 class="spacename space-title"><%= @space.name %> </h1>
+              <%= @space.streetnum %> <%= @space.street %>,
+              <%= @space.city %>, <%= @space.state %>, 
+              <%= @space.areacode %>
+          </div>
+          <div class="space-text-box">
+            <p>
+              <strong>Type:</strong>
+              <%= @space.spacetype %>
+            </p>
+            <p>
+              <strong>Price:</strong>
+              <%= @space.price %>
+            </p>
+            <p>
+              <strong>Vacancies:</strong>
+              <%= @space.vacancies %>
+            </p>
+            <p>
+              <strong>Description:</strong>
+              <%= @space.description %>
+            </p>
+            <p>
+              <strong>Owner:</strong>
+              <%= @space.user.name %>
+            </p>
+            <p>
+              <strong>Rating:</strong>
+              <%= rating_for @space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <%= image_tag @space.avatar.url, :class => "space-photo"%>
       </div>
     </div>
@@ -47,8 +47,8 @@
   </div>
 
   <% if current_user == @space.user %>
-    <%= link_to 'Edit', edit_space_path(@space) %> |
-    <%= link_to 'Destroy', @space, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+    <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-default top-margin" %> 
+    <%= link_to 'Destroy', @space, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default top-margin" %> 
   <% end%>
 
   <% if current_user != @space.user and @leased.count == 0%>
