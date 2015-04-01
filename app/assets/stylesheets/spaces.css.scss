@@ -1,6 +1,25 @@
 // Place all the styles related to the Spaces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+.panel-heading {
+	min-height: 74px;
+}
+
+.description {
+	display: block;
+	display: -webkit-box;
+	max-width: 400px;
+	height: 129.6px;
+	margin: 0 auto;
+	font-size: 12;
+	line-height: 1.2;
+	-webkit-line-clamp: 7;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 
 .heading-spacer{
 	padding-top: 15px;
@@ -62,7 +81,7 @@
 	width: 300px;
 	max-height: 250px;
 	overflow: hidden;
-	margin-right: 2em;
+	padding-right: 2em;
 }
 
 .Media {
@@ -85,7 +104,7 @@
    p{
    	margin:0px;
    }
-
+   
    padding-bottom: 30px;
 }
 
