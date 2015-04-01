@@ -40,10 +40,10 @@
 
     <% @spaces.each do |space| %>
     <div class="panel panel-default">
-      <div class="star-col panel-heading">
+      <div class="panel-heading">
         <div class="col-md-10"><h4 class="spacename"><%= link_to space.name, space %></h4></div>
         <div class="col-md-2">
-          <p><%= rating_for space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
+          <p><span>Avg Rating:<%= rating_for space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
           </p>
         </div>
       </div>
@@ -59,7 +59,7 @@
           <p><span class="info">Vacancies: </span><%= space.vacancies %></p>
           <p class="description"><%= space.description %></p>
 
-          <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default top-margin"%> 
+          <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %> 
 
         </div>
       </div>
