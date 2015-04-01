@@ -12,12 +12,12 @@
             class:"form-control formfield", style:"display:inline" %>
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Min $</span>
+            <span class="input-group-addon" id="basic-addon1" style="font-family:Courier New;">MIN $</span>
             <%= text_field_tag :min_price, (params[:min_price] or 1), class:"form-control", style:"" %>
           </div>
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Max $</span>
+            <span class="input-group-addon" id="basic-addon1" style="font-family:Courier New;">MAX $</span>
             <%= text_field_tag :max_price, (params[:max_price] or 99999), class:"form-control", style:""  %>
           </div>
 
