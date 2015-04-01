@@ -1,26 +1,23 @@
 <main class="page">
 
-
-	<div class="jumbotron">
-	  <h1><%= @user.name %></h1>
-	  
-	  <p>
-	  	<%= @user.occupation %>
-	  </p>
-	</div>
-
 	<div class="profile-wrapper autoflow">
-	      <div class="col-md-6">
-	        <p>
-	          <strong>Email:</strong>
-	          <%= @user.email %>
-	        </p>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+		        <div class="panel-heading" style="overflow:auto;">
+		    		<h3 class="panel-title" style="float:left;"><%= @user.name %></h3>
+		    		<span style="float:right;"><%= rating_for @user, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %></span>
+		    	</div>
+				<div class="panel-body">
+					<img class="user-avatar" src="<%= @user.avatar %>">
+					<div class="label-container">
+					    <span class="user-label">Email:</span> <%= @user.email %><br />
+					    <span class="user-label">Title:</span> <%= @user.occupation %>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	  		<p>
-	  			<span class="info">Reputation:</span>
-	  			<%= rating_for @user, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
-	  		</p>
-	      </div>
+
 	      <div class="col-md-6">
 	        <% if @owns.count != 0 %>
 	  	      <div class="panel panel-default">
