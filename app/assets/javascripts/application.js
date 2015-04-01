@@ -16,4 +16,17 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+$(function(){
+	$('.approveLease')
+		.on('ajax:send', function () { $(this).addClass('loading'); })
+		.on('ajax:complete', function () { $(this).removeClass('loading'); })
+		.on('ajax:error', function () { 
+			console.log("ya dun goofed");
+		})
+		.on('ajax:success', function(e, data, status, xhr) { 
+			console.log(data.lease_status);
+			$(this).parent(".leaseStatus").html("true");
+	});
+})
+
 

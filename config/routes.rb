@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :leases
+  resources :leases do 
+    member do
+      put "approve", to: "leases#approve"
+      put "disapprove", to: "leases#disapprove"
+    end
+  end
+
   resources :users, only: [:show, :edit, :update]
   resources :spaces do
     resources :leases
