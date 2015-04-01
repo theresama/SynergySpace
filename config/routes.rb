@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up =>'signup'},
     :controllers => { :registrations => 'users' }
 
+  get 'leases' => 'leases#index'
+
   get 'listings' => 'pages#listings'
   get 'listings/search' => 'pages#listings'
   post 'listings/search' => 'pages#listings'

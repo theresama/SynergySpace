@@ -26,16 +26,16 @@
             </div>
 
             <div class="form-group">
-                <%= f.label :password  %> <i>(leave blank if you don't want to change it)</i>
+                <%= f.label :password  %> <i>(mandatory for account changes)</i>
                 <div class="col-sm-12">
-                    <%= f.password_field :password, autocomplete: "off",:class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :pattern => '.{8,}' %>
+                    <%= f.password_field :password, autocomplete: "on",:class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :pattern => '.{8,}' %>
                 </div>
             </div>
 
             <div class="form-group">
                 <%= f.label :password_confirmation  %>
                 <div class="col-sm-12">
-                    <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :pattern => '.{8,}' %>
+                    <%= f.password_field :password_confirmation, autocomplete: "on", :class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :pattern => '.{8,}' %>
                 </div>
             </div>
 
