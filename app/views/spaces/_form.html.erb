@@ -1,143 +1,45 @@
 <%= form_for(@space, :html => { :multipart => true }) do |f| %>
-	<div class="col-md-12">
-		<div class="col-md-5">
-			<% if @space.errors.any? %>
-				<div id="error_explanation">
-				  <h2><%= pluralize(@space.errors.count, "error") %> prohibited this space from being saved:</h2>
+	<div class="col-md-10">
+		<div class="panel panel-default">
+	        <div class="panel-heading" style="overflow:auto;">
+	    		<h3 class="panel-title" style="float:left;">Submit - <i>Add a new space for users to browse</i></h3>
+	    	</div>
+			<div class="panel-body">
+				<img class="user-avatar" src="">
+				<div class="label-container">
+					<% if @space.errors.any? %>
+						<div id="error_explanation">
+						  <h2><%= pluralize(@space.errors.count, "error") %> prohibited this space from being saved:</h2>
 
-				  <ul>
-				  <% @space.errors.full_messages.each do |message| %>
-				    <li><%= message %></li>
-				  <% end %>
-				  </ul>
-				</div>
-			<% end %>
+						  <ul>
+						  <% @space.errors.full_messages.each do |message| %>
+						    <li><%= message %></li>
+						  <% end %>
+						  </ul>
+						</div>
+					<% end %>
 
-			<div class="input-section">
-				<div class="title">
-					<h3>Title:</h3>				
-				</div>
-				<div class="input-group long">
-					<%= f.text_field :name, :class => "form-control" %>
-				</div>
-			</div>
+					
+					Title: <%= f.text_field :name, :class => "form-control" %><br />
+					Type: <%= f.select :spacetype, options_for_select(["Open Concept", "Cubicles", "Team", "Combination"]), :class => 'form-control' %><br /><br />
+					Street Number: <%= f.text_field :streetnum, :class => "form-control" %><br />
+					Street: <%= f.text_field :street, :class => "form-control" %><br />
+					City: <%= f.select :city, options_for_select(["Toronto", "New York", "San Francisco"]), :class => 'form-control' %><br /><br />
+					State/Province: <%= f.select :state, options_for_select(["Ontario", "New York", "California"]), :class => 'form-control' %><br /><br />
+					Areacode: <%= f.text_field :areacode, :class => "form-control" %> <br />
+					Vacancies: <%= f.text_field :vacancies, :class => "form-control" %><br />
 
-		
-			<div class="input-section">
-				<div class="title">
-					<h3>Type:</h3>				
-				</div>
-				<div class="input-group long">
-					<%= f.select :spacetype, options_for_select(["Open Concept", "Cubicles", "Team", "Combination"]), :class => 'form-control' %>
-				</div>
-			</div>
+					Price: <%= f.text_field :price, :class => "form-control" %><br />
+					Description: <%= f.text_area :description , :rows => "10", :class => "form-control" %>
 
-		
-			<div class="input-section">
-				<div class="title">
-					<h3>Street Number:</h3>				
-				</div>
-				<div class="input-group long">
-					<%= f.text_field :streetnum, :class => "form-control" %>
-				</div>
-			</div>
+			  		Tags (revelant vibe): <br/>
+			  		<%= f.text_field :tag_list %>
+					<br>avatar: <%= f.file_field :avatar %><br />
 
-
-		
-			<div class="input-section">
-				<div class="title">
-					<h3>Street:</h3>				
+					<%= f.submit :submit , :class => "form-control" %>
 				</div>
-				<div class="input-group long">
-					<%= f.text_field :street, :class => "form-control" %>
 				</div>
 			</div>
-
-		
-			<div class="input-section">
-				<div class="title">
-					<h3>City:</h3>				
-				</div>
-				<div class="input-group long">
-
-					<%= f.select :city, options_for_select(["Toronto", "New York", "San Francisco"]), :class => 'form-control' %>
-
-				</div>
-			</div>
-
-		
-			<div class="input-section">
-				<div class="title">
-					<h3>State/Province:</h3>				
-				</div>
-				<div class="input-group long">
-					<%= f.select :state, options_for_select(["Ontario", "New York", "California"]), :class => 'form-control' %>
-				</div>
-			</div>
-
-
-		
-			<div class="input-section">
-				<div class="title">
-					<h3>Areacode:</h3>				
-				</div>
-				<div class="input-group long">
-					<%= f.text_field :areacode, :class => "form-control" %>
-				</div>
-			</div>
-
-			<div class="input-section">
-				<div class="title">
-					<h3>Vacancies:</h3>				
-				</div>
-				<div class="input-group long">
-					<%= f.text_field :vacancies, :class => "form-control" %>
-				</div>
-			</div>
-
-			<div class="input-section">
-				<div class="title">
-					<h3>Price:</h3>				
-				</div>
-				<div class="input-group">
-				    <div class="input-group-addon">$</div>
-				    <%= f.text_field :price, :class => "form-control" %>
-				</div>
-			</div>
-
-			
-
-			<div class="input-section">
-				<div class="title">
-					<h3>Description</h3>				
-				</div>
-				<div class="input-group long">
-					<%= f.text_area :description , :rows => "10", :class => "form-control" %>
-				</div>
-			</div>
-
-			<div class="field">
-			  <%= f.label :tag_list, "Space tags (revelant vibe)" %><br/>
-			  <%= f.text_field :tag_list %>
-			</div>
-
-			<br>avatar<br>
-			  <%= f.file_field :avatar %>
-
-			<div class="actions input-section">
-				<%= f.submit :submit , :class => "form-control" %>
-			</div>
-
-			
-		</div>
-
-
-		<div class="col-md-7">
-			<div class="col-md-7">
-				<a href="#" class="thumbnail">
-					<img src="<%= asset_path('uploadimage.png') %>" alt="...">
-				</a>
-			</div>	
 		</div>
 	</div>
 <% end %>

@@ -23,3 +23,17 @@
 		font: 1.5em serif;
 	}
 }
+
+.user-avatar{
+	float:left;
+	max-width:150px;
+	max-height:150px;
+	margin-right:10px;
+}
+
+.label-container{
+	padding-top:10px;
+	.user-label{
+		font-weight:bold;
+	}
+}
