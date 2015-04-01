@@ -60,16 +60,25 @@ class LeasesController < ApplicationController
     end
   end
 
-  def confirm
-    lease_id = params[:lease_id]
-    lease = Lease.where(id: lease_id).first
-    if lease
-      lease.approved = true
+  def approve
+    @lease = Lease.find(params[:id])
+    @lease.update_attribute(:accepted, true)
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render json: { lease_status: @lease.accepted} }
+      format.js { render :layout => false }
     end
-    render :json =>  { :status => :ok }
   end
 
-
+  def disapprove
+    @lease = Lease.find(params[:id])
+    @lease.update_attribute(:accepted, false)
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render json: { lease_status: @lease.accepted} }
+      format.js { render :layout => false }
+    end
+  end
 
   # DELETE /leases/1
   # DELETE /leases/1.json
