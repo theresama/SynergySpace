@@ -38,6 +38,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'foreigner'
 
 gem 'rails_12factor'
 
