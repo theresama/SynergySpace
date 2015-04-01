@@ -1,55 +1,31 @@
 <main class="page">
     <div class="edit-wrapper">
-      <h2 class="secondary-heading">Edit Your Info </h2>
-
         <%= form_for @user do |f| %>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="overflow:auto;">
+                    <h3 class="panel-title" style="float:left;">Edit Your Info</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="label-container">
+                       
+                        Name:  <%= f.text_field :name, autofocus: true, :class => "form-control", :pattern => '[a-zA-Z]{1,}', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30' %><br />
 
-            <div class="form-group">
-                <%= f.label :name  %>
-                <div class="col-sm-12">
-                    <%= f.text_field :name, autofocus: true, :class=>'inputbox', :pattern => '[a-zA-Z]{1,}', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30' %>
+                        Occupation: <%= f.text_field :occupation, autofocus: true, :class => "form-control", :pattern => '[a-zA-Z]{1,}', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30' %><br />
+
+                        Tags: <%= f.text_field :tag_list , :class => "form-control"%><br />
+
+                        Email: <%= f.email_field :email, :class => "form-control", :type =>'email', :placeholder =>'Enter your email', :title => 'Enter a valid email'  %><br />
+
+                        Password:(mandatory for account changes)<%= f.password_field :password, autocomplete: "on", :class => "form-control", :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :pattern => '.{8,}' %><br />
+
+                        Password Confirmation: <%= f.password_field :password_confirmation, autocomplete: "on", :class => "form-control", :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :pattern => '.{8,}' %><br />
+
+                        <%= f.submit :submit , :class => "form-control" %>
+
+
+                    </div>
                 </div>
             </div>
-
-            <div class="form-group">
-                <%= f.label :occupation%>
-                <div class="col-sm-12">
-                    <%= f.text_field :occupation, autofocus: true, :class=>'inputbox', :pattern => '[a-zA-Z]{1,}', :placeholder =>'Letters only, no spaces', :title => 'Letters only|No Spaces|30 char max', :maxlength => '30' %>
-                </div>
-            </div>
-
-            <div class="field">
-              <%= f.label :tag_list, "Your tags (separated by commas)" %><br/>
-              <%= f.text_field :tag_list %>
-            </div>
-
-            
-
-            <div class="form-group">
-                <%= f.label :email   %>
-                <div class="col-sm-12">
-                    <%= f.email_field :email, :class => 'inputbox', :type =>'email', :placeholder =>'Enter your email', :title => 'Enter a valid email'  %>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <%= f.label :password  %> <i>(mandatory for account changes)</i>
-                <div class="col-sm-12">
-                    <%= f.password_field :password, autocomplete: "on",:class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :pattern => '.{8,}' %>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <%= f.label :password_confirmation  %>
-                <div class="col-sm-12">
-                    <%= f.password_field :password_confirmation, autocomplete: "on", :class => 'inputbox', :placeholder =>'Enter your password', :title => 'Password must be 8 to 64 characters long', :minlength => '8', :maxlength => '64', :pattern => '.{8,}' %>
-                </div>
-            </div>
-
-            <%= f.submit :submit , :class => "form-control" %>
-
-
-
           </div>
 
           
