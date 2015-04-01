@@ -5,7 +5,11 @@ class SpacesController < ApplicationController
   # GET /spaces
   # GET /spaces.json
   def index
-    @spaces = Space.where("vacancies > ?", 0)
+    if params[:tag]
+      @spaces = Space.tagged_with(params[:tag])
+    else
+      @spaces = Space.where("vacancies > ?", 0)
+    end
   end
 
   # GET /spaces/1

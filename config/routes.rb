@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
   post '/rate' => 'rater#create', :as => 'rate'
 
+  get 'spaces/tagged/:tag', to: 'spaces#index', as: :tag
+
   
 
 

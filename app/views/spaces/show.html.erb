@@ -36,6 +36,16 @@
               <strong>Rating:</strong>
               <%= rating_for @space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
             </p>
+            <p>
+              <span class="user-label">Synergy tags:</span>
+                <% @space.tag_list.each do |keyword| %>
+                  <a href="/spaces/tagged/<%= keyword %>">
+                    <span class="keywordtag">
+                      <%= keyword %>
+                    </span>
+                  </a>
+                <% end %>
+            </p>
           </div>
         </div>
       </div>
