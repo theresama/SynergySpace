@@ -1,0 +1,122 @@
+ <div class="splash-page">
+   <div class="site-wrapper">
+     <div class="site-wrapper-inner">
+       <div class="cover-container">
+         <div class="masthead clearfix">
+           <div class="inner">
+             <nav>
+               <ul class="nav masthead-nav">
+                <% if user_signed_in? %>
+                  <li>
+                    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+                    </li>
+                <% else %>
+                  <li>
+                      <a id="login" href=""><i class="fa fa-sign-in"></i> Login</a>
+                  </li>
+                <% end %>
+               </ul>
+             </nav>
+           </div>
+         </div>
+
+         <div class="inner cover">
+           <h1 class="cover-heading">SynergySpace</h1>
+           <p class="lead">Lease or rent the perfect office space with office mates that match your energy.</p>
+           <p class="lead">
+            <a id="signup" href="/signup" class="btn btn-lg btn-default">Sign Up</a>
+           </p>
+         </div>
+
+       </div>
+
+     </div>
+
+   </div>
+
+
+    <div class="search-wrapper">
+
+      <div class="search-panel">
+
+        <form class="form-inline search-form">
+          <select class="form-control formfield input-lg" style="display:inline">
+              <option value="one">Toronto</option>
+              <option value="two">New York</option>
+              <option value="three">San Francisco</option>
+          </select>
+          <select class="form-control formfield input-lg" style="display:inline">
+              <option value="one">$0 - 500</option>
+              <option value="two">$501 - 1000</option>
+              <option value="three">$1001 - 1500</option>
+              <option value="four">$1501 - 2000</option>
+              <option value="five">$2001 - 2500</option>
+              <option value="six">$2501 - 3000</option>
+              <option value="seven">$3001+</option>
+          </select>
+          <button type="submit" class="btn btn-default formfield input-lg" style="background: #E5E3E3"><i class="fa fa-search"></i></button>
+        </form>
+
+      </div>
+    </div>
+
+ </div>
+
+
+<div class="popup-cover hide">
+    <div class="signup-wrapper hide pop-select">
+      <iframe class="popup" scrolling='no' height='485x' src='/signup'></iframe>
+    </div>
+    <div class="login-wrapper hide pop-select">
+      <%= render "layouts/login" %>
+    </div>
+</div>
+
+<%= render "spaces/listings" %>
+
+<script>
+  $(function(){
+    $("#signup").on('click', function(e){
+      $(".popup-cover").toggleClass("hide");
+      $(".signup-wrapper").toggleClass("hide");
+    });
+
+    $("#login").on('click', function(e){
+      $(".popup-cover").toggleClass("hide");
+      $(".login-wrapper").toggleClass("hide");
+    });
+
+
+
+    $('.popup-cover').on('click', function(e) { 
+       if( e.target !== this ) 
+           return;
+        $(".pop-select").addClass("hide");
+        $(".popup-cover").toggleClass("hide");
+    });
+
+
+
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
