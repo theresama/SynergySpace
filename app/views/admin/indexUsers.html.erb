@@ -15,23 +15,23 @@
                   <th>Email</th>
                   <th>Occupation</th>
                   <th>Last used IP</th>
-                  <th>Admin?</th>
+                  <th>Admin</th>
                   <th>Profile</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="userTable">
               	<% @users = User.all %>
               	<% @users.each do |user| %>
                 
-              		<tr>
+              		<tr id=<%= user.id %>>
               			<td><%= user.id %></a></td>
               			<td><%= user.name %></td>
             	  		<td><%= user.email %></td>
             	  		<td><%= user.occupation %></td>
             	  		<td><%= user.last_sign_in_ip %></td>
-            	  		<td> <select>
-                       <option value="admin"><%= user.admin.to_s.capitalize %></option>
-                        <option value="admin"><%= (!user.admin).to_s.capitalize %></option>
+            	  		<td> <select id=<%= "adminSelect" + user.id.to_s %>>
+                       <option class="admin1" value="admin1"><%= user.admin.to_s.capitalize %></option>
+                        <option class="admin2" value="admin2"><%= (!user.admin).to_s.capitalize %></option>
                   </select>  </td>
                     <td><a href="/users/<%= user.id %>">View</a></td>
               	  	</tr>
@@ -45,4 +45,8 @@
 
     
 </main>
+
+
+
+
 
