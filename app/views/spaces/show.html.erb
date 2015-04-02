@@ -3,15 +3,15 @@
 
   <div class="space-info-wrapper autoflow">
     <div class="col-md-12">
-      <div class="col-md-7">
-        <div class="panel panel-default">
-          <div class="panel-heading">
+      <div class="col-md-12">
+        <div class="panel panel-default autoflow" >
+          <div class="panel-heading margin-bottom">
               <h1 class="spacename space-title"><%= @space.name %> </h1>
               <%= @space.streetnum %> <%= @space.street %>,
               <%= @space.city %>, <%= @space.state %>, 
               <%= @space.areacode %>
           </div>
-          <div class="space-text-box">
+          <div class="col-md-6">
             <p>
               <strong>Type:</strong>
               <%= @space.spacetype %>
@@ -26,7 +26,7 @@
             </p>
             <p>
               <strong>Description:</strong>
-              <%= @space.description %>
+              <%= @space.description.gsub(/\n/, '<br/>').html_safe %>
             </p>
             <p>
               <strong>Owner:</strong>
@@ -36,7 +36,7 @@
               <strong>Rating:</strong>
               <%= rating_for @space, "reputation", :disable_after_rate => true, :cancel => false, :half_show => true %>
             </p>
-            <p>
+            <p class="keywords">
               <span class="user-label"><strong>Synergy tags:</strong></span>
                 <% @space.tag_list.each do |keyword| %>
                   <a href="/spaces/tagged/<%= keyword %>">
@@ -47,11 +47,12 @@
                 <% end %>
             </p>
           </div>
+          <div class="col-md-6">
+            <%= image_tag @space.avatar.url, :class => "space-photo"%>
+          </div>
         </div>
       </div>
-      <div class="col-md-5">
-        <%= image_tag @space.avatar.url, :class => "space-photo"%>
-      </div>
+      
     </div>
 
   </div>

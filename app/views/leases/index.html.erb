@@ -42,7 +42,7 @@
                 </td>
                 <td><%= lease.startdate %></td>
                 <td><%= lease.enddate %></td>
-                <td><%= lease.message %></td>
+                <td><%= lease.message.gsub(/\n/, '<br/>').html_safe %></td>
                 <% if not lease.accepted %>
                   <td id="tdWrap">
                     <p class="leaseStatus">

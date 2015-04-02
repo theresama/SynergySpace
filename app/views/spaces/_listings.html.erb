@@ -58,7 +58,7 @@
           <p><span class="info">Price: </span><%= space.price %></p>
           <p><span class="info">Vacancies: </span><%= space.vacancies %></p>
           <p class="description"><%= space.description %></p>
-          <p>
+          <p class="keywords">
             <span class="info">Synergy tags:</span>
               <% space.tag_list.each do |keyword| %>
                 <a href="/spaces/tagged/<%= keyword %>">

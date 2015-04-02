@@ -40,7 +40,7 @@
       <div class="space-text-box col-md-6">
         <p>
           <strong>Message:</strong>
-          <%= @lease.message %>
+          <%= @lease.message.gsub(/\n/, '<br/>').html_safe %>
         </p>
       </div>
     </div>
